@@ -13,6 +13,7 @@
     packages = with pkgs; [
       vim
       wget
+      git
     ];
   };
   nixpkgs.config.allowUnfree = true;
