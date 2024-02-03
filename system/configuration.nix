@@ -5,23 +5,8 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.mk = {
-    isNormalUser = true;
-    description = "mk";
-    extraGroups = [ "networkmanager" "wheel" "dialout"];
-    packages = with pkgs; [
-      vim
-      wget
-      git
-      lf
-      firefox
-    ];
-  };
   nixpkgs.config.allowUnfree = true;
   boot.kernelPackages = pkgs.linuxPackages-rt_latest;
-
-
   nix = {
     package = pkgs.nixUnstable;
     registry.nixpkgs.flake = inputs.nixpkgs;
@@ -30,4 +15,11 @@
       experimental-features = [ "nix-command" "flakes" ];
     };
   };
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.mk = {
+    isNormalUser = true;
+    description = "mk";
+    extraGroups = [ "networkmanager" "wheel" "dialout"];
+  };
+
 }
