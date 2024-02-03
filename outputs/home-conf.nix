@@ -15,10 +15,11 @@ modules = [
 ../home/base
 {
 nix.registry.nixpkgs.flake = nixpkgs;
-nix.sessionVariables.NIX_PATH = "nixpkgs=flake:nixpkgs\$NIX_PATH:+:$NIX_PATH}";
+home.sessionVariables.NIX_PATH = "nixpkgs=flake:nixpkgs\${NIX_PATH:+:$NIX_PATH}";
 }
 ];
 });
 
 in {
 mk = mkHome [../home/mk.nix];
+}
