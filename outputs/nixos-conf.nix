@@ -8,6 +8,7 @@ let
       specialArgs = { inherit inputs; };
       modules = [ confPath ../system/configuration.nix ];
     };
-in {
+in
+{
   vm = mkMachine ../system/machine/vm;
 }

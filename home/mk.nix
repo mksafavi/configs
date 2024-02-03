@@ -1,10 +1,9 @@
-{config, pkgs, ...}:
+{ config, pkgs, ... }:
 {
-home.packages = with pkgs; [ 
-vim
-wget
-git
-lf
- ];
-home.stateVersion = "23.05";
+  home.packages = with pkgs; [
+    vim
+    wget
+    lf
+  ];
+  home.stateVersion = "23.05";
 }

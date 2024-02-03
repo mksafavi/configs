@@ -19,7 +19,7 @@
   users.users.mk = {
     isNormalUser = true;
     description = "mk";
-    extraGroups = [ "networkmanager" "wheel" "dialout"];
+    extraGroups = [ "networkmanager" "wheel" "dialout" ];
   };
 
 }
