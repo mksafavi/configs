@@ -10,6 +10,6 @@ let
     };
 in
 {
-  vm = mkMachine ../system/machine/vm;
-  t800 = mkMachine ../system/machine/t800;
+  vm = mkMachine ../system/vm;
+  t800 = mkMachine ../system/t800;
 }
