@@ -5,5 +5,7 @@
     wget
     lf
   ];
+  home.username = "mk";
+  home.homeDirectory = "/home/mk";
   home.stateVersion = "23.05";
 }

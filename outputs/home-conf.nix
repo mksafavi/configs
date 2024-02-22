@@ -23,4 +23,5 @@ let
 in
 {
   mk = mkHome [ ../home/mk.nix ];
+  home = mkHome [ ../home/home.nix ];
 }
