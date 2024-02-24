@@ -12,4 +12,5 @@ in
 {
   vm = mkMachine ../system/vm;
   t800 = mkMachine ../system/t800;
+  t1000 = mkMachine ../system/t1000;
 }
