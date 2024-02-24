@@ -77,6 +77,8 @@
     #  thunderbird
     ];
   };
+  # added user to trusted users for getting local substitutes to work
+  nix.settings.trusted-users = ["root" "mk"];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

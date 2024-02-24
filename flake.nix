@@ -2,13 +2,13 @@
   description = "NixOS configurations";
   nixConfig = {
 substituters = [
-      http://192.168.1.100:8080/
-      https://cache.nixos.org/
+      "http://192.168.1.100:5000"
+      "https://cache.nixos.org"
     ];
-  trusted-public-keys = [cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=];
-  trusted-substituters = [
-      http://192.168.1.100:8080/
-    ];
+  trusted-public-keys = [
+"cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+"cache.example.org-1:VrVDVUwlg6FmNGX1UAIb8DCs6p3gFtoTQCCpfsym5Mc="
+];
 };
 
   inputs = {
