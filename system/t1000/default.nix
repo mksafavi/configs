@@ -72,9 +72,7 @@
     description = "mk";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      firefox
-      kate
-    #  thunderbird
+      plasma5Packages.kdeconnect-kde
     ];
   };
   # added user to trusted users for getting local substitutes to work

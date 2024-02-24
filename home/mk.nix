@@ -4,6 +4,8 @@
     vim
     wget
     lf
+firefox
+git
   ];
   home.username = "mk";
   home.homeDirectory = "/home/mk";
