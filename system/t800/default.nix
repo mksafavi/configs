@@ -128,7 +128,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    plasma5Packages.kdeconnect-kde
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -145,10 +144,14 @@
   services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 
+1716 # kdeconnect
+];
+  networking.firewall.allowedUDPPorts = [ 
+1716 # kdeconnect
+];
   # Or disable the firewall altogether.
-  networking.firewall.enable = false;
+  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

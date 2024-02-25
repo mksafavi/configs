@@ -74,7 +74,6 @@
     description = "mk";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      plasma5Packages.kdeconnect-kde
     ];
   };
   # added user to trusted users for getting local substitutes to work
@@ -104,8 +103,12 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 
+1716 #kdeconnect
+ ];
+  networking.firewall.allowedUDPPorts = [ 
+1716 #kdeconnect
+];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
