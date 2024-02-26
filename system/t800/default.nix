@@ -17,9 +17,6 @@
   boot.loader.grub.useOSProber = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # Linux Kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
   networking.hostName = "t800"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
