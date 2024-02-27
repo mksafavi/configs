@@ -105,7 +105,7 @@
   users.users.mk = {
     isNormalUser = true;
     description = "mk";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" ];
     packages = with pkgs; [
     ];
   };
