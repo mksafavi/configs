@@ -43,6 +43,7 @@
     };
   };
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.initrd.kernelModules = [ "amdgpu" ]; # load amdgpu module early
 
 
   networking.hostName = "t1000"; # Define your hostname.
@@ -63,6 +64,20 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.xserver.videoDrivers = [ "amdgpu" ];
+
+  hardware.opengl = {
+    driSupport = true; # This is already enabled by default
+    driSupport32Bit = true; # For 32 bit applications
+    extraPackages = with pkgs; [
+      amdvlk # unfree alternative to RadV vulkan loader
+    ];
+    # For 32 bit applications 
+    extraPackages32 = with pkgs; [
+      driversi686Linux.amdvlk # unfree alternative to RadV vulkan loader
+    ];
+  };
+
 
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
