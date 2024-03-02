@@ -14,5 +14,9 @@ lutris
 wine
 telegram-desktop
 qv2ray
+nvtop-amd
+usbutils
+htop
+iotop
   ];
 }
