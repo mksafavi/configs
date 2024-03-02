@@ -18,5 +18,7 @@ nvtop-amd
 usbutils
 htop
 iotop
+btop
+chromium
   ];
 }
