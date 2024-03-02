@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./networking.nix
     ];
 
   # Bootloader.
@@ -45,17 +46,6 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.kernelModules = [ "amdgpu" ]; # load amdgpu module early
 
-
-  networking.hostName = "t1000"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
   # Set your time zone.
   time.timeZone = "Asia/Tehran";
 
@@ -91,10 +81,6 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-  services.avahi = {
-   enable = true;
-   nssmdns = true;
-  };
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -144,21 +130,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 
-1716 #kdeconnect
- ];
-  networking.firewall.allowedUDPPorts = [ 
-1716 #kdeconnect
-];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
