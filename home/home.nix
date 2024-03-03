@@ -9,7 +9,6 @@
     wget
     lf
 firefox
-git
   ];
 
 }

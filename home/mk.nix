@@ -9,7 +9,6 @@ services.kdeconnect.enable = true;
     wget
     lf
 firefox
-git
 lutris
 wine
 telegram-desktop
