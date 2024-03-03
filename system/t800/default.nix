@@ -123,6 +123,8 @@
     description = "home";
     extraGroups = [ "networkmanager" "wheel" ];
   };
+  nix.settings.trusted-users = [ "root" "@wheel" ];
+
 
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;

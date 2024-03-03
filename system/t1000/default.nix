@@ -99,8 +99,8 @@
     packages = with pkgs; [
     ];
   };
-  # added user to trusted users for getting local substitutes to work
-  nix.settings.trusted-users = ["root" "mk"];
+  # added user to trusted users 
+  nix.settings.trusted-users = [ "root" "@wheel" ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
