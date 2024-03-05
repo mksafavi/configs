@@ -22,4 +22,11 @@ ncdu
 nethogs
 chromium
   ];
+
+programs.direnv = {
+      enable = true;
+      enableBashIntegration = true; # see note on other shells below
+      nix-direnv.enable = true;
+    };
+programs.bash.enable = true;
 }
