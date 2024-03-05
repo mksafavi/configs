@@ -18,6 +18,8 @@ usbutils
 htop
 iotop
 btop
+ncdu
+nethogs
 chromium
   ];
 }
