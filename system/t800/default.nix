@@ -36,11 +36,7 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5 = {
-    enable = true;
-    bigscreen.enable = true;
-  };
-
+  services.xserver.desktopManager.plasma6.enable = true;
 
   # Enable OpenGL
   hardware.opengl = {
