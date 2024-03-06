@@ -21,6 +21,7 @@ btop
 ncdu
 nethogs
 chromium
+mangohud
   ];
 
 programs.direnv = {
