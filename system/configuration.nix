@@ -10,8 +10,6 @@
     package = pkgs.nixUnstable;
     registry.nixpkgs.flake = nixpkgs;
     nixPath = [ "nixpkgs=flake:nixpkgs" ];
-    settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-    };
+    settings = { experimental-features = [ "nix-command" "flakes" ]; };
   };
 }

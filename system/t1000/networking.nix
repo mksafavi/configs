@@ -1,11 +1,10 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
   services.avahi = {
-   enable = true;
-   nssmdns4 = true;
+    enable = true;
+    nssmdns4 = true;
   };
 
   # Enable networking
@@ -21,10 +20,10 @@
   # Open ports in the firewall.
   # Or disable the firewall altogether.
   networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [ 
-1716 #kdeconnect
- ];
-  networking.firewall.allowedUDPPorts = [ 
-1716 #kdeconnect
-];
+  networking.firewall.allowedTCPPorts = [
+    1716 # kdeconnect
+  ];
+  networking.firewall.allowedUDPPorts = [
+    1716 # kdeconnect
+  ];
 }

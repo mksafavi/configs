@@ -13,13 +13,13 @@ let
         ../home/base
         {
           nix.registry.nixpkgs.flake = nixpkgs;
-          home.sessionVariables.NIX_PATH = "nixpkgs=flake:nixpkgs\${NIX_PATH:+:$NIX_PATH}";
+          home.sessionVariables.NIX_PATH =
+            "nixpkgs=flake:nixpkgs\${NIX_PATH:+:$NIX_PATH}";
         }
       ];
     });
 
-in
-{
+in {
   mk = mkHome [ ../home/mk.nix ];
   home = mkHome [ ../home/home.nix ];
 }

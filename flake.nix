@@ -8,14 +8,15 @@
     };
   };
 
-  outputs = inputs@{nixpkgs, home-manager, ...}:
+  outputs = inputs@{ nixpkgs, home-manager, ... }:
     let system = "x86_64-linux";
-    in
-    {
-      homeConfigurations =
-        (import ./outputs/home-conf.nix { inherit nixpkgs home-manager system; });
+    in {
+      homeConfigurations = (import ./outputs/home-conf.nix {
+        inherit nixpkgs home-manager system;
+      });
 
-      nixosConfigurations =
-        (import ./outputs/nixos-conf.nix { inherit nixpkgs home-manager system; });
+      nixosConfigurations = (import ./outputs/nixos-conf.nix {
+        inherit nixpkgs home-manager system;
+      });
     };
 }

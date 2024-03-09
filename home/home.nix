@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
   home.username = "home";
   home.homeDirectory = "/home/home";
   home.stateVersion = "23.11";
@@ -8,19 +7,19 @@
     vim
     wget
     lf
-firefox
-qv2ray
-chromium
-lutris
-wine
-mangohud
-telegram-desktop
-maliit-keyboard
-usbutils
-iotop
-btop
-ncdu
-nethogs
+    firefox
+    qv2ray
+    chromium
+    lutris
+    wine
+    mangohud
+    telegram-desktop
+    maliit-keyboard
+    usbutils
+    iotop
+    btop
+    ncdu
+    nethogs
   ];
 
 }

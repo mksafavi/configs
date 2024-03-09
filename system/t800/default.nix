@@ -5,10 +5,9 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
   home-manager.users.home = import ../../home/home.nix;
 
   # Bootloader.
@@ -48,7 +47,7 @@
   };
 
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
   boot.initrd.kernelModules = [ "nvidia" ];
   boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
 
@@ -74,7 +73,7 @@
     open = false;
 
     # Enable the Nvidia settings menu,
-	# accessible via `nvidia-settings`.
+    # accessible via `nvidia-settings`.
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
@@ -90,10 +89,9 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
   services.avahi = {
-   enable = true;
-   nssmdns4 = true;
+    enable = true;
+    nssmdns4 = true;
   };
-
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -123,7 +121,6 @@
   };
   nix.settings.trusted-users = [ "root" "@wheel" ];
 
-
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "home";
@@ -133,10 +130,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-git
-wget
-  ];
+  environment.systemPackages = with pkgs; [ git wget ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -152,12 +146,12 @@ wget
   services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 
-1716 # kdeconnect
-];
-  networking.firewall.allowedUDPPorts = [ 
-1716 # kdeconnect
-];
+  networking.firewall.allowedTCPPorts = [
+    1716 # kdeconnect
+  ];
+  networking.firewall.allowedUDPPorts = [
+    1716 # kdeconnect
+  ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
