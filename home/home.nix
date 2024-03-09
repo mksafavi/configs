@@ -11,6 +11,9 @@
 firefox
 qv2ray
 chromium
+lutris
+wine
+mangohud
 telegram-desktop
   ];
 
