@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
+  home-manager.users.home = import ../../home/home.nix;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
