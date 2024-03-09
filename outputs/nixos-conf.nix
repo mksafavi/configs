@@ -1,12 +1,15 @@
-{ inputs, system, ... }:
+{ nixpkgs, system, ... }:
 
 let
-  nixosSystem = inputs.nixpkgs.lib.nixosSystem;
+  nixosSystem = nixpkgs.lib.nixosSystem;
   mkMachine = confPath:
     nixosSystem {
       inherit system;
-      specialArgs = { inherit inputs; };
-      modules = [ confPath ../system/configuration.nix ];
+      specialArgs = { inherit nixpkgs; };
+      modules = [
+      confPath
+      ../system/configuration.nix
+      ];
     };
 in
 {

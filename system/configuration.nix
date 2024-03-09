@@ -2,13 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, pkgs, nixpkgs, ... }:
 
 {
   nixpkgs.config.allowUnfree = true;
   nix = {
     package = pkgs.nixUnstable;
-    registry.nixpkgs.flake = inputs.nixpkgs;
+    registry.nixpkgs.flake = nixpkgs;
     nixPath = [ "nixpkgs=flake:nixpkgs" ];
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
