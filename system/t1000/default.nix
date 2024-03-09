@@ -121,6 +121,7 @@ drivers = [pkgs.splix];
   git
   wget
   ];
+  systemd.packages = with pkgs; [ lact ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
