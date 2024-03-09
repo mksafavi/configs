@@ -9,6 +9,9 @@
     wget
     lf
 firefox
+qv2ray
+chromium
+telegram-desktop
   ];
 
 }
