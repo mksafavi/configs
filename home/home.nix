@@ -15,6 +15,7 @@ lutris
 wine
 mangohud
 telegram-desktop
+maliit-keyboard
   ];
 
 }
