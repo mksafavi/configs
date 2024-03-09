@@ -16,7 +16,6 @@ wine
 mangohud
 telegram-desktop
 maliit-keyboard
-nvtop-nvidia
 usbutils
 iotop
 btop
