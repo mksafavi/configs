@@ -9,7 +9,7 @@
     lf
     firefox
     lutris
-    wine
+    wineWowPackages.stable
     telegram-desktop
     qv2ray
     nvtop-amd

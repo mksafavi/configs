@@ -11,7 +11,7 @@
     qv2ray
     chromium
     lutris
-    wine
+    wineWowPackages.stable
     mangohud
     telegram-desktop
     maliit-keyboard
