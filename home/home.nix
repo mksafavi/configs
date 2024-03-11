@@ -11,6 +11,7 @@
     qv2ray
     chromium
     lutris
+    yuzu
     wineWowPackages.stable
     mangohud
     telegram-desktop
