@@ -33,7 +33,12 @@
     };
   };
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.initrd.kernelModules = [ "amdgpu" ]; # load amdgpu module early
+  # load amdgpu module early. load v4l2loopback for virtual video devices
+  boot.initrd.kernelModules = [ "amdgpu" "v4l2loopback"]; 
+  boot.extraModulePackages = [ pkgs.linuxPackages_latest.v4l2loopback ];
+  boot.extraModprobeConfig = ''
+    options v4l2loopback video_nr=10 exclusive_caps=1
+  '';
 
   # Set your time zone.
   time.timeZone = "Asia/Tehran";
