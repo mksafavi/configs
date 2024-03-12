@@ -36,7 +36,7 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
-  services.xserver.displayManager.sddm.wayland.enable = true;
+  services.xserver.displayManager.defaultSession = "plasmax11";
   services.xserver.desktopManager.plasma6.enable = true;
 
   # Enable OpenGL
@@ -48,7 +48,7 @@
 
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = [ "nvidia" ];
-  boot.initrd.kernelModules = [ "nvidia" ];
+  boot.initrd.kernelModules = [ "nvidia" "nvidia_uvm" "nvidia_drm" "nvidia_modeset" ];
   boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
 
   hardware.nvidia = {
@@ -56,6 +56,8 @@
     modesetting.enable = true;
     # Fix screen tearing 
     forceFullCompositionPipeline = true;
+    # to enable gpu in headless mode
+    nvidiaPersistenced = true;
 
     # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
     powerManagement.enable = false;
