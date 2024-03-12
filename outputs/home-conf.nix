@@ -10,7 +10,6 @@ let
       inherit pkgs;
       modules = [
         { inherit imports; }
-        ../home/base
         {
           nix.registry.nixpkgs.flake = nixpkgs;
           home.sessionVariables.NIX_PATH =

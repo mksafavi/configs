@@ -1,25 +1,15 @@
 { config, pkgs, ... }: {
+  imports = [./base];
   home.username = "mk";
   home.homeDirectory = "/home/mk";
   home.stateVersion = "23.11";
   services.kdeconnect.enable = true;
+
   home.packages = with pkgs; [
-    vim
-    wget
-    lf
-    firefox
-    lutris
+    neovim
+    (lutris.override { extraPkgs = pkgs: [ wineWowPackages.stable ]; })
     wineWowPackages.stable
-    telegram-desktop
-    qv2ray
     nvtop-amd
-    usbutils
-    htop
-    iotop
-    btop
-    ncdu
-    nethogs
-    chromium
     mangohud
   ];
 
