@@ -1,13 +1,14 @@
-{ nixpkgs, home-manager, system, ... }:
+{ inputs, system, ... }:
+
+with inputs;
 
 let
   nixosSystem = nixpkgs.lib.nixosSystem;
-  mkMachine = confPath:
+  mkMachine = extraModules:
     nixosSystem {
       inherit system;
       specialArgs = { inherit nixpkgs; };
       modules = [
-        confPath
         ../system/configuration.nix
         home-manager.nixosModules.home-manager
         {
@@ -16,9 +17,9 @@ let
           home-manager.useUserPackages =
             true; # packages will be installed to /etc/profiles instead of $HOME/.nix-profile
         }
-      ];
+      ] ++ extraModules;
     };
 in {
-  t800 = mkMachine ../system/t800/configuration.nix;
-  t1000 = mkMachine ../system/t1000/configuration.nix;
+  t800 = mkMachine [ ../system/t800/configuration.nix ];
+  t1000 = mkMachine [ ../system/t1000/configuration.nix ];
 }

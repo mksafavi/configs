@@ -1,4 +1,6 @@
-{ nixpkgs, home-manager, system, ... }:
+{ inputs, system, ... }:
+
+with inputs;
 
 let
   pkgs = import nixpkgs {
