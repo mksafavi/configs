@@ -3,6 +3,7 @@
   imports = [
     ./network.nix
     ./utils.nix
+    ./media.nix
     ];
   home.packages = with pkgs; [ ];
 }

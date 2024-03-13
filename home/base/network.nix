@@ -1,5 +1,5 @@
 { config, pkgs, ... }: {
-  home.packages = with pkgs; [ 
+  home.packages = with pkgs; [
     wget
     firefox
     chromium
