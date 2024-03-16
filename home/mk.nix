@@ -9,12 +9,15 @@
   services.kdeconnect.enable = true;
 
   home.packages = with pkgs; [
-    neovim
     (lutris.override { extraPkgs = pkgs: [ wineWowPackages.stable ]; })
     wineWowPackages.stable
     nvtop-amd
     mangohud
   ];
+  programs.neovim = {
+    enable = true;
+    vimAlias = true;
+  };
 
   programs.direnv = {
     enable = true;
