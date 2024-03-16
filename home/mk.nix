@@ -9,10 +9,7 @@
   services.kdeconnect.enable = true;
 
   home.packages = with pkgs; [
-    (lutris.override { extraPkgs = pkgs: [ wineWowPackages.stable ]; })
-    wineWowPackages.stable
     nvtop-amd
-    mangohud
   ];
   programs.neovim = {
     enable = true;

@@ -6,11 +6,5 @@
   home.stateVersion = "23.11";
   services.kdeconnect.enable = true;
 
-  home.packages = with pkgs; [
-    lutris
-    yuzu
-    wineWowPackages.stable
-    mangohud
-  ];
-
+  home.packages = with pkgs; [  ];
 }
