@@ -5,11 +5,16 @@
 { config, lib, pkgs, nixpkgs, ... }:
 
 {
+  imports = [ ./warp.nix ];
   nixpkgs.config.allowUnfree = true;
   nix = {
     package = pkgs.nixUnstable;
     registry.nixpkgs.flake = nixpkgs;
     nixPath = [ "nixpkgs=flake:nixpkgs" ];
     settings = { experimental-features = [ "nix-command" "flakes" ]; };
+  };
+
+  services = {
+    warp-proxy.enable = true;
   };
 }
