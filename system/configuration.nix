@@ -14,7 +14,5 @@
     settings = { experimental-features = [ "nix-command" "flakes" ]; };
   };
 
-  services = {
-    warp-proxy.enable = true;
-  };
+  services = { warp-proxy.enable = true; };
 }
