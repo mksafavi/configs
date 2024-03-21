@@ -21,5 +21,8 @@ let
     };
 in {
   t800 = mkMachine [ ../system/t800/configuration.nix ];
-  t1000 = mkMachine [ ../system/t1000/configuration.nix ];
+  t1000 = mkMachine [
+    ../system/t1000/configuration.nix
+    inputs.musnix.nixosModules.musnix
+  ];
 }

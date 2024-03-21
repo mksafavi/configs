@@ -94,7 +94,7 @@
   users.users.mk = {
     isNormalUser = true;
     description = "mk";
-    extraGroups = [ "networkmanager" "wheel" "dialout" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "audio" ];
     packages = with pkgs; [ ];
   };
   # added user to trusted users 
