@@ -9,5 +9,6 @@
     btop
     ncdu
     htop
+    unrar
   ];
 }
