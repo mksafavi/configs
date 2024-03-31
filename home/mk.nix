@@ -5,7 +5,10 @@
   home.stateVersion = "23.11";
   services.kdeconnect.enable = true;
 
-  home.packages = with pkgs; [ nvtop-amd ];
+  home.packages = with pkgs; [ 
+    nvtop-amd 
+    obsidian
+  ];
   programs.neovim = {
     enable = true;
     vimAlias = true;
