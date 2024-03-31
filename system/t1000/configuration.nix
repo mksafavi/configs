@@ -10,7 +10,6 @@
     ./networking.nix
     ./audio.nix
   ];
-  home-manager.users.mk = import ../../home/mk.nix;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
