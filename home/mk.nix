@@ -6,7 +6,7 @@
   services.kdeconnect.enable = true;
 
   home.packages = with pkgs; [ 
-    nvtop-amd 
+    nvtopPackages.amd 
     obsidian
   ];
   programs.neovim = {

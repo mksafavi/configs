@@ -37,7 +37,7 @@
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.displayManager.defaultSession = "plasmax11";
-  services.xserver.desktopManager.plasma6.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Enable OpenGL
   hardware.opengl = {
