@@ -1,7 +1,5 @@
 # NixOS configurations
 
-
-
 ## build nixos: 
 This will build nixos and also the home-manager configuration as module.
 
@@ -28,17 +26,3 @@ nixos-rebuild build  --flake ./#machineName --target-host user@host --use-remote
 ```
 nixos-rebuild build  --flake ./#machineName --build-host user@build-host --target-host user@host --use-remote-sudo
 ```
-
-## build standalone home-manager:
-It's possible to use home-manager separate from nixos build.
-
-- user is defined at `home-conf.nix`
-
-```
-nix build ./#homeConfigurations.<user>.activationPackage
-```
-Then run 
-```
-./result/activate
-```
-This will install `home-manager` command. later builds can be done by running `home-manager switch`
