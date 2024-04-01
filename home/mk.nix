@@ -1,5 +1,11 @@
 { config, pkgs, ... }: {
-  imports = [ ./base ./base/music.nix ];
+  imports = [
+    ./base/network.nix
+    ./base/utils.nix
+    ./base/media.nix
+    ./base/gaming.nix
+    ./base/music.nix
+  ];
   home.username = "mk";
   home.homeDirectory = "/home/mk";
   home.stateVersion = "23.11";
