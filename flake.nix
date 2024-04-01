@@ -51,7 +51,7 @@
         t800 = mkMachine [
           system/t800/configuration.nix
           home-manager.nixosModules.home-manager
-          { home-manager.users.mk = import home/home.nix; }
+          { home-manager.users.home = import home/home.nix; }
         ];
 
       };
