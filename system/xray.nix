@@ -41,7 +41,7 @@ with lib;
     systemd.packages = [ cfg.package ];
 
     systemd.user.services.xray-proxy = {
-      wantedBy = [ "multi-user.target" ];
+      wantedBy = [ "default.target" ];
       description = "Connect to xray proxy";
       script = ''
         ${cli} -c ${configFile}
