@@ -15,6 +15,7 @@
     nvtopPackages.amd 
     obsidian
   ];
+
   programs.neovim = {
     enable = true;
     vimAlias = true;
