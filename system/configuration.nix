@@ -5,7 +5,7 @@
 { config, lib, pkgs, nixpkgs, ... }:
 
 {
-  imports = [ ./warp.nix ];
+  imports = [ ./warp.nix ./xray.nix ];
   nix = {
     package = pkgs.nixUnstable;
     registry.nixpkgs.flake = nixpkgs;
@@ -13,5 +13,11 @@
     settings = { experimental-features = [ "nix-command" "flakes" ]; };
   };
 
-  services = { warp-proxy.enable = true; };
+  services = {
+    warp-proxy.enable = true;
+    xray-proxy = {
+    enable = true;
+    configFile = "~/xray_config/direct.json";
+    };
+  };
 }
