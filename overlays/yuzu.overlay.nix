@@ -7,7 +7,7 @@ let
     rev = "f20a0c955555fb68cfc72886d7476de2aacd1b4e";
     sha256 = "irN9RgAuoouk7PhQapw6/p2hhwUNHwIPHE6b6ZaE5nE=";
   }) {
-    inherit system;
+    system = "x86_64-linux";
     config.allowUnfree = true;
   };
 in {

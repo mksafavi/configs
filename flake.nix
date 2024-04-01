@@ -24,7 +24,7 @@
             pkgs = import nixpkgs {
               inherit system;
               config.allowUnfree = true;
-              overlays = [ overlays/yuzu.overlay.nix ];
+              overlays = [ (import overlays/yuzu.overlay.nix) ];
             };
           };
           modules = [
