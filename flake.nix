@@ -21,6 +21,11 @@
           inherit system;
           specialArgs = {
             inherit nixpkgs; # get nixpkgs for setting nix.registry.nixpkgs in system/configuration.nix file
+            pkgs = import nixpkgs {
+              inherit system;
+              config.allowUnfree = true;
+              overlays = [ ];
+            };
           };
           modules = [
             system/configuration.nix

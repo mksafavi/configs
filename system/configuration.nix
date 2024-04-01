@@ -6,7 +6,6 @@
 
 {
   imports = [ ./warp.nix ];
-  nixpkgs.config.allowUnfree = true;
   nix = {
     package = pkgs.nixUnstable;
     registry.nixpkgs.flake = nixpkgs;
