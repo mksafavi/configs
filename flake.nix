@@ -16,12 +16,25 @@
     let
       system = "x86_64-linux";
       mkMachine = machineModules:
-        nixpkgs.lib.nixosSystem {
+        nixpkgs.lib.nixosSystem rec {
           inherit system;
           specialArgs = {
             inherit nixpkgs;
           };
-          modules = [ system/configuration.nix ] ++ machineModules;
+          modules = [
+            system/configuration.nix
+            home-manager.nixosModules.default
+            {
+              home-manager = {
+                extraSpecialArgs = specialArgs;
+                # home-manager uses the global pkgs that is configured via the system level nixpkgs options. this is necessary for allowing unfree apps on home-manager
+                useGlobalPkgs = true;
+                # packages will be installed to /etc/profiles instead of $HOME/.nix-profile
+                useUserPackages = true;
+              };
+            }
+
+          ] ++ machineModules;
         };
     in {
       nixosConfigurations = {
@@ -30,26 +43,14 @@
           musnix.nixosModules.musnix
           home-manager.nixosModules.home-manager
           {
-            home-manager = {
-              users.mk = import home/mk.nix;
-              # home-manager uses the global pkgs that is configured via the system level nixpkgs options. this is necessary for allowing unfree apps on home-manager
-              useGlobalPkgs = true;
-              # packages will be installed to /etc/profiles instead of $HOME/.nix-profile
-              useUserPackages = true;
-            };
+            home-manager.users.mk = import home/mk.nix;
           }
         ];
         t800 = mkMachine [
           system/t800/configuration.nix
           home-manager.nixosModules.home-manager
           {
-            home-manager = {
-              users.home = import home/home.nix;
-              # home-manager uses the global pkgs that is configured via the system level nixpkgs options. this is necessary for allowing unfree apps on home-manager
-              useGlobalPkgs = true;
-              # packages will be installed to /etc/profiles instead of $HOME/.nix-profile
-              useUserPackages = true;
-            };
+            home-manager.users.mk = import home/home.nix;
           }
         ];
 
