@@ -6,5 +6,6 @@
     telegram-desktop
     nethogs
     nload
+    qv2ray
   ];
 }
