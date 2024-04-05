@@ -10,5 +10,6 @@
     ncdu
     htop
     unrar
+    lsof
   ];
 }
