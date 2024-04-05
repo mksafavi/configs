@@ -4,7 +4,7 @@
     firefox
     chromium
     telegram-desktop
-    nethogs
+    bandwhich
     nload
     qv2ray
     aria
