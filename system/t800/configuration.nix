@@ -38,6 +38,10 @@
   services.xserver.displayManager.defaultSession = "plasmax11";
   services.desktopManager.plasma6.enable = true;
 
+  # Enable logitech k400 support
+  hardware.logitech.wireless.enable = true;
+  hardware.logitech.wireless.enableGraphical = true;
+
   # Enable OpenGL
   hardware.opengl = {
     enable = true;
