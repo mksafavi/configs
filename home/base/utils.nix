@@ -11,5 +11,6 @@
     htop
     unrar
     lsof
+    jcal
   ];
 }
