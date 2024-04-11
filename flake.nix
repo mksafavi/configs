@@ -27,6 +27,7 @@
               overlays = [ 
                 (import overlays/yuzu.overlay.nix) 
                 (import overlays/yabridge.overlay.nix) 
+                (import overlays/rpcs3.overlay.nix) 
                 ];
             };
           };

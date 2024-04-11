@@ -3,7 +3,7 @@
     (lutris.override { extraPkgs = pkgs: [ wineWowPackages.stable ]; })
     mangohud
     yuzu 
-    #rpcs3
+    rpcs3
     ryujinx
   ];
 }
