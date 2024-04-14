@@ -7,17 +7,30 @@
 {
   imports = [ ./warp.nix ./xray.nix ];
   nix = {
+    # Garbage Collection
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than +5";
+    };
+
+    # Flakes settings
     package = pkgs.nixUnstable;
     registry.nixpkgs.flake = nixpkgs;
     nixPath = [ "nixpkgs=flake:nixpkgs" ];
-    settings = { experimental-features = [ "nix-command" "flakes" ]; };
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+      auto-optimise-store = true;
+      keep-outputs = true;
+      keep-derivations = true;
+    };
   };
 
   services = {
     warp-proxy.enable = true;
     xray-proxy = {
-    enable = true;
-    configFile = "~/xray_config/direct.json";
+      enable = true;
+      configFile = "~/xray_config/direct.json";
     };
   };
 }
