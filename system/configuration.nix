@@ -27,7 +27,6 @@
   };
 
   services = {
-    warp-proxy.enable = true;
     xray-proxy = {
       enable = true;
       configFile = "~/xray_config/direct.json";
