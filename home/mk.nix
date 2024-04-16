@@ -27,6 +27,9 @@
     nix-direnv.enable = true;
   };
   programs.fish.enable = true;
+  programs.fish.interactiveShellInit = ''
+    set -gx EDITOR vim
+  '';
   programs.bash = {
     enable = true;
     initExtra = ''
