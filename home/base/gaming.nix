@@ -1,8 +1,9 @@
-{ config, pkgs, ... }: {
-  home.packages = with pkgs; [ 
+{ config, pkgs, ... }:
+{
+  home.packages = with pkgs; [
     (lutris.override { extraPkgs = pkgs: [ wineWowPackages.stable ]; })
     mangohud
-    yuzu 
+    yuzu
     rpcs3
     ryujinx
   ];

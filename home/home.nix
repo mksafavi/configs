@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   #home tv pc configurations
   imports = [
     ./base/network.nix

@@ -1,5 +1,6 @@
-{ config, pkgs, ... }: {
-  home.packages = with pkgs; [ 
+{ config, pkgs, ... }:
+{
+  home.packages = with pkgs; [
     lf
     vim
     jq
@@ -12,5 +13,6 @@
     unrar
     lsof
     jcal
+    file
   ];
 }

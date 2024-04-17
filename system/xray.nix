@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 with lib;
 
@@ -29,24 +34,23 @@ with lib;
         description = lib.mdDoc "xray config json path";
       };
     };
-
   };
 
-  config = let
-    cfg = config.services.xray-proxy;
-    configFile = toString cfg.configFile;
-    cli = "${cfg.package}/bin/xray";
+  config =
+    let
+      cfg = config.services.xray-proxy;
+      configFile = toString cfg.configFile;
+      cli = "${cfg.package}/bin/xray";
+    in
+    mkIf cfg.enable {
+      systemd.packages = [ cfg.package ];
 
-  in mkIf cfg.enable {
-    systemd.packages = [ cfg.package ];
-
-    systemd.user.services.xray-proxy = {
-      wantedBy = [ "default.target" ];
-      description = "Connect to xray proxy";
-      script = ''
-        ${cli} -c ${configFile}
-      '';
-
+      systemd.user.services.xray-proxy = {
+        wantedBy = [ "default.target" ];
+        description = "Connect to xray proxy";
+        script = ''
+          ${cli} -c ${configFile}
+        '';
+      };
     };
-  };
 }

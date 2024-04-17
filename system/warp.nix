@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 with lib;
 
@@ -29,30 +34,29 @@ with lib;
         description = lib.mdDoc "Internal proxy port";
       };
     };
-
   };
 
-  config = let
-    cfg = config.services.warp-proxy;
-    internalPort = toString cfg.internalPort;
-    cli = "${cfg.package}/bin/warp-cli";
+  config =
+    let
+      cfg = config.services.warp-proxy;
+      internalPort = toString cfg.internalPort;
+      cli = "${cfg.package}/bin/warp-cli";
+    in
+    mkIf cfg.enable {
+      systemd.packages = [ cfg.package ];
 
-  in mkIf cfg.enable {
-    systemd.packages = [ cfg.package ];
-
-    systemd.services.warp-proxy = {
-      wantedBy = [ "multi-user.target" ];
-      requires = [ "warp-svc.service" ];
-      after = [ "warp-svc.service" ];
-      description = "Connect to warp proxy";
-      script = ''
-        ${cli} --accept-tos register
-        ${cli} --accept-tos set-proxy-port ${internalPort}
-        ${cli} --accept-tos set-mode proxy
-        ${cli} --accept-tos disable-dns-log
-        ${cli} --accept-tos connect
-      '';
-
+      systemd.services.warp-proxy = {
+        wantedBy = [ "multi-user.target" ];
+        requires = [ "warp-svc.service" ];
+        after = [ "warp-svc.service" ];
+        description = "Connect to warp proxy";
+        script = ''
+          ${cli} --accept-tos register
+          ${cli} --accept-tos set-proxy-port ${internalPort}
+          ${cli} --accept-tos set-mode proxy
+          ${cli} --accept-tos disable-dns-log
+          ${cli} --accept-tos connect
+        '';
+      };
     };
-  };
 }

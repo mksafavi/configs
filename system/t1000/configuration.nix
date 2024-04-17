@@ -5,7 +5,8 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./networking.nix
     ./audio.nix
@@ -16,7 +17,10 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
   # load amdgpu module early. load v4l2loopback for virtual video devices
-  boot.initrd.kernelModules = [ "amdgpu" "v4l2loopback" ];
+  boot.initrd.kernelModules = [
+    "amdgpu"
+    "v4l2loopback"
+  ];
   boot.extraModulePackages = [ pkgs.linuxPackages_latest.v4l2loopback ];
   boot.extraModprobeConfig = ''
     options v4l2loopback video_nr=10 exclusive_caps=1
@@ -39,15 +43,13 @@
   hardware.opengl = {
     driSupport = true; # This is already enabled by default
     driSupport32Bit = true; # For 32 bit applications
-    extraPackages = with pkgs;
-      [
-        amdvlk # unfree alternative to RadV vulkan loader
-      ];
+    extraPackages = with pkgs; [
+      amdvlk # unfree alternative to RadV vulkan loader
+    ];
     # For 32 bit applications 
-    extraPackages32 = with pkgs;
-      [
-        driversi686Linux.amdvlk # unfree alternative to RadV vulkan loader
-      ];
+    extraPackages32 = with pkgs; [
+      driversi686Linux.amdvlk # unfree alternative to RadV vulkan loader
+    ];
   };
 
   # Enable the KDE Plasma Desktop Environment.
@@ -55,10 +57,8 @@
   services.desktopManager.plasma6.enable = true;
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
-  hardware.bluetooth.settings.General.Experimental =
-    true; # enables Bluetooth battery report
-  hardware.bluetooth.powerOnBoot =
-    true; # powers up the default Bluetooth controller on boot
+  hardware.bluetooth.settings.General.Experimental = true; # enables Bluetooth battery report
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
   # Configure keymap in X11
   services.xserver = {
@@ -79,11 +79,19 @@
   users.users.mk = {
     isNormalUser = true;
     description = "mk";
-    extraGroups = [ "networkmanager" "wheel" "dialout" "audio" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "dialout"
+      "audio"
+    ];
     packages = with pkgs; [ ];
   };
   # added user to trusted users 
-  nix.settings.trusted-users = [ "root" "@wheel" ];
+  nix.settings.trusted-users = [
+    "root"
+    "@wheel"
+  ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -115,5 +123,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }

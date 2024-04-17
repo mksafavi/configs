@@ -12,11 +12,18 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs-unstable, home-manager, musnix, ... }:
+  outputs =
+    inputs@{
+      nixpkgs-unstable,
+      home-manager,
+      musnix,
+      ...
+    }:
     let
       system = "x86_64-linux";
       nixpkgs = nixpkgs-unstable;
-      mkMachine = machineModules:
+      mkMachine =
+        machineModules:
         nixpkgs.lib.nixosSystem rec {
           inherit system;
           specialArgs = {
@@ -24,11 +31,11 @@
             pkgs = import nixpkgs {
               inherit system;
               config.allowUnfree = true;
-              overlays = [ 
-                (import overlays/yuzu.overlay.nix) 
-                (import overlays/yabridge.overlay.nix) 
-                (import overlays/rpcs3.overlay.nix) 
-                ];
+              overlays = [
+                (import overlays/yuzu.overlay.nix)
+                (import overlays/yabridge.overlay.nix)
+                (import overlays/rpcs3.overlay.nix)
+              ];
             };
           };
           modules = [
@@ -41,10 +48,10 @@
                 useUserPackages = true; # packages will be installed to /etc/profiles instead of $HOME/.nix-profile
               };
             }
-
           ] ++ machineModules;
         };
-    in {
+    in
+    {
       nixosConfigurations = {
         t1000 = mkMachine [
           system/t1000/configuration.nix
@@ -57,7 +64,6 @@
           home-manager.nixosModules.home-manager
           { home-manager.users.home = import home/home.nix; }
         ];
-
       };
     };
 }

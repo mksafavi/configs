@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   imports = [
     ./base/network.nix
     ./base/utils.nix
@@ -11,8 +12,8 @@
   home.stateVersion = "23.11";
   services.kdeconnect.enable = true;
 
-  home.packages = with pkgs; [ 
-    nvtopPackages.amd 
+  home.packages = with pkgs; [
+    nvtopPackages.amd
     obsidian
   ];
 

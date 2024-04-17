@@ -1,5 +1,6 @@
-{ config, pkgs, ... }: {
-  home.packages = with pkgs; [ 
+{ config, pkgs, ... }:
+{
+  home.packages = with pkgs; [
     mpv
     vlc
   ];

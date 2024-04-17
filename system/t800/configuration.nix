@@ -3,9 +3,9 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
 {
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
 
@@ -51,8 +51,12 @@
 
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = [ "nvidia" ];
-  boot.initrd.kernelModules =
-    [ "nvidia" "nvidia_uvm" "nvidia_drm" "nvidia_modeset" ];
+  boot.initrd.kernelModules = [
+    "nvidia"
+    "nvidia_uvm"
+    "nvidia_drm"
+    "nvidia_modeset"
+  ];
   boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
 
   hardware.nvidia = {
@@ -123,9 +127,15 @@
   users.users.home = {
     isNormalUser = true;
     description = "home";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
-  nix.settings.trusted-users = [ "root" "@wheel" ];
+  nix.settings.trusted-users = [
+    "root"
+    "@wheel"
+  ];
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
@@ -136,7 +146,10 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [ git wget ];
+  environment.systemPackages = with pkgs; [
+    git
+    wget
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -168,5 +181,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
