@@ -10,6 +10,7 @@
     ./hardware-configuration.nix
     ./networking.nix
     ./audio.nix
+    ./virtualization.nix
   ];
 
   # Bootloader.
@@ -84,6 +85,7 @@
       "wheel"
       "dialout"
       "audio"
+      "libvirtd"
     ];
     packages = with pkgs; [ ];
   };
