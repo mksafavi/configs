@@ -86,8 +86,12 @@
       "dialout"
       "audio"
       "libvirtd"
+      "camera"
     ];
-    packages = with pkgs; [ ];
+    packages = with pkgs; [
+      kdePackages.kamera
+      gphoto2fs
+     ];
   };
   # added user to trusted users 
   nix.settings.trusted-users = [
@@ -107,6 +111,7 @@
     git
     wget
   ];
+  programs.gphoto2.enable = true;
   systemd.packages = with pkgs; [ lact ];
   systemd.services.lact.enable = true;
 
