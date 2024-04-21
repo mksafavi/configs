@@ -1,7 +1,12 @@
 { config, pkgs, ... }:
 {
   home.packages = with pkgs; [
-    (lutris.override { extraPkgs = pkgs: [ wineWowPackages.stable ]; })
+    (lutris.override {
+      extraPkgs = pkgs: [
+        wineWowPackages.stable
+        gamescope
+      ];
+    })
     mangohud
     yuzu
     rpcs3
