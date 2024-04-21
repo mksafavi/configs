@@ -16,6 +16,7 @@
   home.packages = with pkgs; [
     nvtopPackages.amd
     obsidian
+    blender-hip
   ];
 
   programs.neovim = {
