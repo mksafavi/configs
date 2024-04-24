@@ -14,6 +14,7 @@
   services.kdeconnect.enable = true;
 
   home.packages = with pkgs; [
+    loopbackwebcam
     nvtopPackages.amd
     obsidian
     blender-hip
