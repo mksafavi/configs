@@ -7,7 +7,6 @@
     ./base/gaming.nix
     ./base/music.nix
     ./base/virtualization.nix
-    ./base/scripts.nix
   ];
   home.username = "mk";
   home.homeDirectory = "/home/mk";
