@@ -9,6 +9,7 @@
     nload
     qv2ray
     aria
+    dprox
   ];
   home.file.".config/aria2/aria2.conf".text = ''
     continue
