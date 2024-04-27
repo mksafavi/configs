@@ -69,6 +69,11 @@
 
   # Enable CUPS to print documents.
   services.printing = {
+    listenAddresses = [ "*:631" ];
+    allowFrom = [ "all" ];
+    browsing = true;
+    defaultShared = true;
+    openFirewall = true;
     enable = true;
     drivers = [ pkgs.splix ];
   };
@@ -91,7 +96,7 @@
     packages = with pkgs; [
       kdePackages.kamera
       gphoto2fs
-     ];
+    ];
   };
   # added user to trusted users 
   nix.settings.trusted-users = [
