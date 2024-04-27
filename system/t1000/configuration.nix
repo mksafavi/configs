@@ -29,10 +29,6 @@
 
   # Set your time zone.
   time.timeZone = "Asia/Tehran";
-  boot.kernelParams = [
-    "video=HDMI-A-1:1920x1080@75"
-    "video=DP-2:1920x1080@75"
-  ];
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
