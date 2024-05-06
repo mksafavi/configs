@@ -11,6 +11,7 @@
     ncdu
     htop
     unrar
+    p7zip
     lsof
     jcal
     file
