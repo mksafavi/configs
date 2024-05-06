@@ -20,7 +20,7 @@
     gc = {
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than +5";
+      options = "--delete-older-than 5d"; # reverd when this is merged: https://github.com/NixOS/nix/pull/10426
     };
 
     # Flakes settings
