@@ -18,6 +18,7 @@
     nvtopPackages.amd
     obsidian
     blender-hip
+    zerotierone
   ];
 
   programs.neovim = {
