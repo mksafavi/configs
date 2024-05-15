@@ -10,6 +10,7 @@
     qv2ray
     aria
     dprox
+    nmap
   ];
   home.file.".config/aria2/aria2.conf".text = ''
     continue
