@@ -19,6 +19,7 @@
     obsidian
     blender-hip
     zerotierone
+    syncthing
   ];
 
   programs.neovim = {
