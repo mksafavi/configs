@@ -2,7 +2,7 @@
 pkgs.mkShell {
   packages = with pkgs;[ 
     vscode
-    nixfmt
+    nixfmt-rfc-style
    ];
 }
 
