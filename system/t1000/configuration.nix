@@ -37,6 +37,7 @@
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
 
+  hardware.i2c.enable = true;
   hardware.opengl = {
     driSupport = true; # This is already enabled by default
     driSupport32Bit = true; # For 32 bit applications
