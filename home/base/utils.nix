@@ -10,6 +10,7 @@
     btop
     ncdu
     htop
+    rar
     unrar
     p7zip
     lsof
