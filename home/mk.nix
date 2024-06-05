@@ -20,6 +20,7 @@
     blender-hip
     zerotierone
     syncthing
+    calibre
   ];
 
   programs.neovim = {
