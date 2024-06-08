@@ -6,6 +6,7 @@
     reaper
     sonobus
     helvum
+    noise-repellent
   ];
 
   home.file.".config/REAPER/UserPlugins/reaper_reapack-x86_64.so".source = pkgs.fetchurl {
