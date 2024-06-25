@@ -27,6 +27,9 @@
     enable = true;
     vimAlias = true;
   };
+  programs.emacs = {
+    enable = true;
+  };
 
   programs.direnv = {
     enable = true;
