@@ -38,9 +38,8 @@
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   hardware.i2c.enable = true;
-  hardware.opengl = {
-    driSupport = true; # This is already enabled by default
-    driSupport32Bit = true; # For 32 bit applications
+  hardware.graphics = {
+    enable32Bit = true; # For 32 bit applications
     extraPackages = with pkgs; [
       amdvlk # unfree alternative to RadV vulkan loader
     ];
