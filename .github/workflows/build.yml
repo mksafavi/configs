@@ -12,10 +12,11 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4.1.7
+
       - name: "Install Nix"
-      - uses: cachix/install-nix-action@v27
+        uses: cachix/install-nix-action@v27
 
       - name: "Build Nix Config"
-      - run: |
+        run: |
           nix build .#nixosConfigurations.${{ matrix.machine }}.config.system.build.toplevel
                 
