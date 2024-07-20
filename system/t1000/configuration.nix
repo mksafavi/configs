@@ -74,6 +74,9 @@
     enable = true;
     drivers = [ pkgs.splix ];
   };
+  fonts.packages = with pkgs;[
+    wqy_zenhei
+  ];
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
