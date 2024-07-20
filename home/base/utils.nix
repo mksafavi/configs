@@ -15,5 +15,6 @@
     lsof
     jcal
     file
+    moreutils
   ];
 }
