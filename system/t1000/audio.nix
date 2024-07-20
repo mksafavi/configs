@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 {
   # Enable sound with pipewire.
-  sound.enable = true;
   musnix.enable = true;
   hardware.pulseaudio.enable = false;
   services.pipewire = {
