@@ -31,4 +31,5 @@
   networking.firewall.allowedUDPPorts = [
     1716 # kdeconnect
   ];
+  networking.interfaces.enp14s0.wakeOnLan.enable = true;
 }

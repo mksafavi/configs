@@ -26,6 +26,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.interfaces.enp3s0.wakeOnLan.enable = true;
 
   # Set your time zone.
   time.timeZone = "Asia/Tehran";
