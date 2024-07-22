@@ -10,8 +10,11 @@
   ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+    timeout = 3;
+  };
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "t800"; # Define your hostname.

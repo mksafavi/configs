@@ -14,8 +14,11 @@
   ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+    timeout = 3;
+  };
   boot.kernelPackages = pkgs.linuxPackages_latest;
   # load amdgpu module early. load v4l2loopback for virtual video devices
   boot.initrd.kernelModules = [
