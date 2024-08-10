@@ -95,6 +95,7 @@
       "audio"
       "libvirtd"
       "camera"
+      "docker"
     ];
     packages = with pkgs; [
       kdePackages.kamera
