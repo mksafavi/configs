@@ -41,6 +41,7 @@
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   hardware.i2c.enable = true;
+  hardware.new-lg4ff.enable = true;
   hardware.graphics = {
     enable32Bit = true; # For 32 bit applications
     extraPackages = with pkgs; [

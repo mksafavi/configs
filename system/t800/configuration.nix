@@ -47,6 +47,8 @@
   hardware.logitech.wireless.enable = true;
   hardware.logitech.wireless.enableGraphical = true;
 
+  hardware.new-lg4ff.enable = true;
+
   # Enable OpenGL
   hardware.graphics = {
     enable = true;

@@ -7,6 +7,7 @@
         gamescope
       ];
     })
+    oversteer
     mangohud
     yuzu
     rpcs3
