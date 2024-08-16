@@ -26,7 +26,7 @@
     # Flakes settings
     package = pkgs.nixVersions.latest;
     registry.nixpkgs.flake = nixpkgs; # use nixpkgs for flake commands instead of downloading flake-registry
-    nixPath = [ "nixpkgs=${nixpkgs}" ]; # use nixpkgs for legacy commands instead of downloading flake-registry
+    nixPath = [ "nixpkgs=flake:nixpkgs" ]; # use nixpkgs for legacy commands instead of downloading flake-registry
     settings = {
       experimental-features = [
         "nix-command"

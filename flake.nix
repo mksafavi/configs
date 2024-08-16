@@ -46,6 +46,7 @@
                 useGlobalPkgs = true; # home-manager uses the global pkgs that is configured via the system level nixpkgs options. this is necessary for allowing unfree apps on home-manager
                 useUserPackages = true; # packages will be installed to /etc/profiles instead of $HOME/.nix-profile
               };
+              nix.registry.nixpkgs.flake = nixpkgs;
             }
           ] ++ machineModules;
         };
