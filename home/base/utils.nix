@@ -16,5 +16,6 @@
     jcal
     file
     moreutils
+    pwgen
   ];
 }
