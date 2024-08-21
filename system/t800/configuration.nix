@@ -16,6 +16,8 @@
     timeout = 3;
   };
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  environment.sessionVariables.MOZ_ENABLE_WAYLAND = "0";
+
 
   networking.hostName = "t800"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
