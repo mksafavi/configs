@@ -12,6 +12,8 @@
     htop
     rar
     p7zip
+    unzip
+    zip
     lsof
     jcal
     file
