@@ -11,6 +11,7 @@
     aria
     dprox
     nmap
+    yt-dlp
   ];
   home.file.".config/aria2/aria2.conf".text = ''
     continue
