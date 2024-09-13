@@ -7,6 +7,7 @@
     ./base/gaming.nix
     ./base/music.nix
     ./base/virtualization.nix
+    ./base/dev.nix
   ];
 
   home.username = "mk";
@@ -25,18 +26,4 @@
     syncthing
     calibre
   ];
-
-  programs.neovim = {
-    enable = true;
-    vimAlias = true;
-  };
-  programs.emacs = {
-    enable = true;
-  };
-
-  programs.direnv = {
-    enable = true;
-    enableBashIntegration = true; # see note on other shells below
-    nix-direnv.enable = true;
-  };
 }
