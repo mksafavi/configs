@@ -13,7 +13,7 @@
 
   programs.emacs = {
     enable = true;
-    #install = true;
+    extraPackages = epkgs: [ epkgs.vterm ];
   };
 
   programs.direnv = {
