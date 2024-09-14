@@ -3,6 +3,6 @@ writeShellApplication {
   name = "nix-profile-diff";
 
   text = ''
-      nix profile diff-closures --profile /nix/var/nix/profiles/system
+    nix profile diff-closures --profile /nix/var/nix/profiles/system
   '';
 }

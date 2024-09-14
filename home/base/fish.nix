@@ -1,7 +1,8 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   programs.fish = {
     enable = true;
-    interactiveShellInit = ''
+      interactiveShellInit = ''
       set -gx EDITOR vim
     '';
   };

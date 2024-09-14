@@ -47,7 +47,7 @@
     extraPackages = with pkgs; [
       amdvlk # unfree alternative to RadV vulkan loader
     ];
-    # For 32 bit applications 
+    # For 32 bit applications
     extraPackages32 = with pkgs; [
       driversi686Linux.amdvlk # unfree alternative to RadV vulkan loader
     ];
@@ -79,7 +79,7 @@
     enable = true;
     drivers = [ pkgs.splix ];
   };
-  fonts.packages = with pkgs;[
+  fonts.packages = with pkgs; [
     wqy_zenhei
   ];
 
@@ -104,7 +104,7 @@
       gphoto2fs
     ];
   };
-  # added user to trusted users 
+  # added user to trusted users
   nix.settings.trusted-users = [
     "root"
     "@wheel"

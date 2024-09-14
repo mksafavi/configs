@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   imports = [
     ./base/fish.nix
     ./base/network.nix
@@ -13,8 +14,7 @@
   home.username = "mk";
   home.homeDirectory = "/home/mk";
   home.stateVersion = "23.11";
-  home.sessionVariables.NIX_PATH =
-    "nixpkgs=flake:nixpkgs\${NIX_PATH:+:$NIX_PATH}";
+  home.sessionVariables.NIX_PATH = "nixpkgs=flake:nixpkgs\${NIX_PATH:+:$NIX_PATH}";
   services.kdeconnect.enable = true;
 
   home.packages = with pkgs; [

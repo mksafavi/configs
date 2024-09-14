@@ -1,7 +1,7 @@
 {
   lib,
   writeShellApplication,
-  gst_all_1
+  gst_all_1,
 }:
 writeShellApplication {
   name = "loopbackwebcam";
