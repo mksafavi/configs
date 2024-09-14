@@ -3,7 +3,6 @@
     ripgrep
     fd
     shellcheck
-    nixfmt-rfc-style
   ];
 
   programs.neovim = {
