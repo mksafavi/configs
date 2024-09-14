@@ -19,5 +19,6 @@
     file
     moreutils
     pwgen
+    nix-profile-diff
   ];
 }
