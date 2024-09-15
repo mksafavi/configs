@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     vlc
     kooha
+    termsonic
   ];
   programs.mpv = {
     enable = true;
