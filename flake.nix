@@ -66,5 +66,13 @@
           { home-manager.users.home = import home/home.nix; }
         ];
       };
+      devShells.default =
+        with pkgs;
+        mkShell {
+          buildInputs = [
+            nixd
+            nixfmt-rfc-style
+          ];
+        };
     };
 }
