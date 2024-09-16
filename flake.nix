@@ -22,20 +22,21 @@
     let
       system = "x86_64-linux";
       nixpkgs = nixpkgs-unstable;
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+        overlays = [
+          (import overlays/yuzu.overlay.nix)
+          (import overlays/scripts.overlay.nix)
+        ];
+      };
       mkMachine =
         machineModules:
         nixpkgs.lib.nixosSystem rec {
           inherit system;
           specialArgs = {
             inherit nixpkgs; # get nixpkgs for setting nix.registry.nixpkgs in system/configuration.nix file
-            pkgs = import nixpkgs {
-              inherit system;
-              config.allowUnfree = true;
-              overlays = [
-                (import overlays/yuzu.overlay.nix)
-                (import overlays/scripts.overlay.nix)
-              ];
-            };
+            inherit pkgs;
           };
           modules = [
             system/configuration.nix
