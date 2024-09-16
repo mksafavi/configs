@@ -7,6 +7,7 @@
         gamescope
       ];
     })
+    vulkan-tools
     oversteer
     mangohud
     yuzu
