@@ -8,6 +8,7 @@
       ];
     })
     vulkan-tools
+    steam
     oversteer
     mangohud
     yuzu
