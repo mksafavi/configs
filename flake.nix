@@ -2,10 +2,6 @@
   description = "NixOS configurations";
   inputs = {
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
-    musnix = {
-      url = "github:musnix/musnix";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -16,7 +12,6 @@
     inputs@{
       nixpkgs-unstable,
       home-manager,
-      musnix,
       ...
     }:
     let
@@ -57,7 +52,6 @@
       nixosConfigurations = {
         t1000 = mkMachine [
           system/t1000/configuration.nix
-          musnix.nixosModules.musnix
           home-manager.nixosModules.home-manager
           { home-manager.users.mk = import home/mk.nix; }
         ];

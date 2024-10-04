@@ -20,26 +20,6 @@
         "type": "github"
       }
     },
-    "musnix": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs-unstable"
-        ]
-      },
-      "locked": {
-        "lastModified": 1727037144,
-        "narHash": "sha256-pxV+e/IGccFn4VcLJ4buEj6yOmoqmdqaLMoFzUbijvs=",
-        "owner": "musnix",
-        "repo": "musnix",
-        "rev": "45250275206d366c8328ed1c57ceebffc945ba43",
-        "type": "github"
-      },
-      "original": {
-        "owner": "musnix",
-        "repo": "musnix",
-        "type": "github"
-      }
-    },
     "nixpkgs-unstable": {
       "locked": {
         "lastModified": 1727802920,
@@ -58,7 +38,6 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "musnix": "musnix",
         "nixpkgs-unstable": "nixpkgs-unstable"
       }
     }
