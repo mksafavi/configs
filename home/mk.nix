@@ -20,7 +20,6 @@
   home.packages = with pkgs; [
     loopbackwebcam
     nvtopPackages.amd
-    obsidian
     blender-hip
     zerotierone
     syncthing
