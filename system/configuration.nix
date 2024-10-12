@@ -12,7 +12,6 @@
 
 {
   imports = [
-    ./warp.nix
     ./xray.nix
   ];
   nix = {
