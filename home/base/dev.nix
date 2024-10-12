@@ -6,11 +6,6 @@
     shellcheck
   ];
 
-  programs.neovim = {
-    enable = true;
-    vimAlias = true;
-  };
-
   programs.emacs = {
     enable = true;
     package = pkgs.emacs-gtk;
