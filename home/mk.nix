@@ -17,11 +17,6 @@
   home.sessionVariables.NIX_PATH = "nixpkgs=flake:nixpkgs\${NIX_PATH:+:$NIX_PATH}";
   services.kdeconnect.enable = true;
 
-  programs.thunderbird = {
-    enable = true;
-    profiles.main.isDefault = true;
-  };
-
   home.packages = with pkgs; [
     loopbackwebcam
     nvtopPackages.amd
@@ -30,5 +25,6 @@
     zerotierone
     syncthing
     calibre
+    thunderbird
   ];
 }
