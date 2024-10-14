@@ -170,9 +170,11 @@
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [
     1716 # kdeconnect
+    53317 #localsend
   ];
   networking.firewall.allowedUDPPorts = [
     1716 # kdeconnect
+    53317 #localsend
   ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;

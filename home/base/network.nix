@@ -12,6 +12,7 @@
     dprox
     nmap
     yt-dlp
+    localsend
   ];
   home.file.".config/aria2/aria2.conf".text = ''
     continue
