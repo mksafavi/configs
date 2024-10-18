@@ -7,7 +7,6 @@
     telegram-desktop
     bandwhich
     nload
-    qv2ray
     aria
     dprox
     nmap
