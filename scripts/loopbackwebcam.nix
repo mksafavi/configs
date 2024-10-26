@@ -18,6 +18,6 @@ writeShellApplication {
     image/jpeg,width=640,height=480,framerate=30/1 ! \
     decodebin ! videoconvert ! \
     video/x-raw,width=640,height=480,framerate=30/1 ! \
-    v4l2sink device=/dev/video10
+    v4l2sink device=/dev/video4
   '';
 }

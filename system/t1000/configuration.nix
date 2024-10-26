@@ -27,7 +27,7 @@
   ];
   boot.extraModulePackages = [ pkgs.linuxPackages_latest.v4l2loopback ];
   boot.extraModprobeConfig = ''
-    options v4l2loopback video_nr=10 exclusive_caps=1
+    options v4l2loopback video_nr=4 exclusive_caps=1
   '';
 
   # Set your time zone.
