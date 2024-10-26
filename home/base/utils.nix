@@ -22,5 +22,6 @@
     pwgen
     nix-profile-diff
     ddcutil
+    ddcui
   ];
 }
