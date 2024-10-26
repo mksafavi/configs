@@ -17,6 +17,7 @@
     lsof
     jcal
     file
+    qrrs
     moreutils
     pwgen
     nix-profile-diff
