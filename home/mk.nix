@@ -7,7 +7,6 @@
     ./base/media.nix
     ./base/gaming.nix
     ./base/music.nix
-    ./base/virtualization.nix
     ./base/dev.nix
   ];
 

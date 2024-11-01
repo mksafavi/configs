@@ -99,7 +99,6 @@
       "wheel"
       "dialout"
       "audio"
-      "libvirtd"
       "camera"
       "docker"
     ];
