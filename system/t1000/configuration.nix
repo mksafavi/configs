@@ -30,6 +30,10 @@
     options v4l2loopback video_nr=4 exclusive_caps=1
   '';
 
+  security.sudo.extraConfig = ''
+    Defaults pwfeedback
+  '';
+
   # Set your time zone.
   time.timeZone = "Asia/Tehran";
 

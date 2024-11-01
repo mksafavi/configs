@@ -28,6 +28,10 @@
   networking.networkmanager.enable = true;
   networking.interfaces.enp3s0.wakeOnLan.enable = true;
 
+  security.sudo.extraConfig = ''
+    Defaults pwfeedback
+  '';
+
   # Set your time zone.
   time.timeZone = "Asia/Tehran";
 
