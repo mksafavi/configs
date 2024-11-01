@@ -22,7 +22,6 @@
     nvtopPackages.amd
     blender-hip
     zerotierone
-    syncthing
     calibre
     thunderbird
   ];
