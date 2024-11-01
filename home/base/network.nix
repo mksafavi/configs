@@ -12,6 +12,7 @@
     nmap
     yt-dlp
     localsend
+    tun2proxy
   ];
   home.file.".config/aria2/aria2.conf".text = ''
     continue
