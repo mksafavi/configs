@@ -4,7 +4,6 @@
     yabridge
     yabridgectl
     reaper
-    sonobus
     helvum
     noise-repellent
   ];
