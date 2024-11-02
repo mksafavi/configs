@@ -67,7 +67,7 @@
     "nvidia_drm"
     "nvidia_modeset"
   ];
-  boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11_beta ];
 
   hardware.nvidia = {
     # Modesetting is required.
