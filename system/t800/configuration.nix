@@ -15,7 +15,7 @@
     efi.canTouchEfiVariables = true;
     timeout = 3;
   };
-  boot.kernelPackages = pkgs.linuxPackages_6_10; #https://github.com/NixOS/nixpkgs/issues/344167
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "t800"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
