@@ -63,6 +63,8 @@
   services.displayManager.defaultSession = "plasma";
   services.desktopManager.plasma6.enable = true;
 
+  services.flatpak.enable = true;
+
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.settings.General.Experimental = true; # enables Bluetooth battery report
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
