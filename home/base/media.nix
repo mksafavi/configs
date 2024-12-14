@@ -7,9 +7,12 @@
   ];
   programs.mpv = {
     enable = true;
-    scripts = with pkgs; [
-      mpvScripts.uosc
-      mpvScripts.mpris
+    scripts = with pkgs.mpvScripts; [
+      uosc
+      mpris
+      mpv-cheatsheet
+      webtorrent-mpv-hook
+      thumbfast
     ];
   };
 }

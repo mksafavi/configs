@@ -13,6 +13,7 @@
     yt-dlp
     localsend
     tun2proxy
+    authenticator
   ];
   home.file.".config/aria2/aria2.conf".text = ''
     continue

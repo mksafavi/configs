@@ -23,5 +23,6 @@
     nix-profile-diff
     ddcutil
     ddcui
+    termdown
   ];
 }
