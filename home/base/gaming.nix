@@ -14,5 +14,6 @@
     yuzu
     rpcs3
     ryujinx
+    duckstation
   ];
 }
