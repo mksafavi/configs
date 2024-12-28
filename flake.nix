@@ -22,7 +22,6 @@
         config.allowUnfree = true;
         overlays = [
           (import overlays/yuzu.overlay.nix)
-          (import overlays/yabridge.overlay.nix)
           (import overlays/scripts.overlay.nix)
         ];
       };
