@@ -66,6 +66,7 @@
           buildInputs = [
             nixd
             nixfmt-rfc-style
+            nix-index
           ];
         };
     };
