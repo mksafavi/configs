@@ -6,12 +6,17 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    flake-programs-sqlite = {
+      url = "github:wamserma/flake-programs-sqlite";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs =
     inputs@{
       nixpkgs-unstable,
       home-manager,
+      flake-programs-sqlite,
       ...
     }:
     let
@@ -44,6 +49,7 @@
               };
               nix.registry.nixpkgs.flake = nixpkgs;
             }
+            flake-programs-sqlite.nixosModules.programs-sqlite
           ] ++ machineModules;
         };
     in
