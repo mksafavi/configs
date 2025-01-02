@@ -15,5 +15,6 @@
     rpcs3
     ryujinx
     duckstation
+    pcsx2
   ];
 }
