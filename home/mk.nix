@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
+    ./base/gc.nix
     ./base/fish.nix
     ./base/network.nix
     ./base/utils.nix
