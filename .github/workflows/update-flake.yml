@@ -8,12 +8,10 @@ jobs:
   lockfile:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4.1.7
-      - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v11
-      - name: Update flake.lock
-        uses: DeterminateSystems/update-flake-lock@v23
+      - uses: actions/checkout@v4.1.7
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - uses: DeterminateSystems/update-flake-lock@v23
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           pr-title: "Update flake.lock" # Title of PR to be created
