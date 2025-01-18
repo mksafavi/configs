@@ -22,21 +22,12 @@
     let
       system = "x86_64-linux";
       nixpkgs = nixpkgs-unstable;
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-        overlays = [
-          (import overlays/yuzu.overlay.nix)
-          (import overlays/scripts.overlay.nix)
-        ];
-      };
       mkMachine =
         machineModules:
         nixpkgs.lib.nixosSystem rec {
           inherit system;
           specialArgs = {
             inherit nixpkgs; # get nixpkgs for setting nix.registry.nixpkgs in system/configuration.nix file
-            inherit pkgs;
           };
           modules = [
             system/configuration.nix
@@ -48,6 +39,12 @@
                 useUserPackages = true; # packages will be installed to /etc/profiles instead of $HOME/.nix-profile
               };
               nix.registry.nixpkgs.flake = nixpkgs;
+            }
+            {
+              nixpkgs.overlays = [
+                (import overlays/yuzu.overlay.nix)
+                (import overlays/scripts.overlay.nix)
+              ];
             }
             flake-programs-sqlite.nixosModules.programs-sqlite
           ] ++ machineModules;
@@ -67,7 +64,7 @@
         ];
       };
       devShells.default =
-        with pkgs;
+        with import nixpkgs {inherit system;};
         mkShell {
           buildInputs = [
             nixd
