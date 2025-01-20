@@ -43,6 +43,7 @@
             {
               nixpkgs.overlays = [
                 (import overlays/yuzu.overlay.nix)
+                (import overlays/yabridge.overlay.nix)
                 (import overlays/scripts.overlay.nix)
               ];
             }
@@ -64,7 +65,7 @@
         ];
       };
       devShells.default =
-        with import nixpkgs {inherit system;};
+        with import nixpkgs { inherit system; };
         mkShell {
           buildInputs = [
             nixd
