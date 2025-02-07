@@ -28,7 +28,6 @@ jobs:
           swap-storage: true
 
       - uses: DeterminateSystems/nix-installer-action@main
-      - uses: DeterminateSystems/magic-nix-cache-action@main
       - run: |
           nix build .#nixosConfigurations.${{ matrix.machine }}.config.system.build.toplevel
                 
