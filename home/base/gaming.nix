@@ -5,6 +5,7 @@
       extraPkgs = pkgs: [
         wineWowPackages.stable
         gamescope
+        umu-launcher
       ];
     })
     vulkan-tools
