@@ -13,6 +13,7 @@
       mpv-cheatsheet
       webtorrent-mpv-hook
       thumbfast
+      skipsilence
     ];
   };
 }
