@@ -1,0 +1,11 @@
+pull_request_rules:
+  - name: Automatic merge for flake-lock updates
+    conditions:
+      - "head~=update/flake-lock"
+      - "author=mksafavi"
+      - "status-success=build (t1000)"
+      - "status-success=build (t800)"
+      - "status-success=build-devshell"
+    actions:
+      merge:
+        method: rebase
