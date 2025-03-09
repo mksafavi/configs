@@ -28,6 +28,7 @@
   networking.firewall.allowedTCPPorts = [
     1716 # kdeconnect
     53317 #localsend
+    9090 #calibre
   ];
   networking.firewall.allowedUDPPorts = [
     1716 # kdeconnect
