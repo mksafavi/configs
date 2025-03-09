@@ -10,6 +10,10 @@
       url = "github:wamserma/flake-programs-sqlite";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    fjordlauncher = {
+      url = "github:hero-persson/FjordLauncherUnlocked";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs =
@@ -17,6 +21,7 @@
       nixpkgs-unstable,
       home-manager,
       flake-programs-sqlite,
+      fjordlauncher,
       ...
     }:
     let
@@ -45,6 +50,7 @@
                 (import overlays/yuzu.overlay.nix)
                 (import overlays/yabridge.overlay.nix)
                 (import overlays/scripts.overlay.nix)
+                fjordlauncher.overlays.default
               ];
             }
             flake-programs-sqlite.nixosModules.programs-sqlite
