@@ -15,5 +15,7 @@
   services.kdeconnect.enable = true;
   home.sessionVariables.NIX_PATH = "nixpkgs=flake:nixpkgs\${NIX_PATH:+:$NIX_PATH}";
 
-  home.packages = with pkgs; [ ];
+  home.packages = with pkgs; [
+    fjordlauncher
+  ];
 }
