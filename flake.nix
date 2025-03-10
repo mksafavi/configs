@@ -69,6 +69,11 @@
           home-manager.nixosModules.home-manager
           { home-manager.users.home = import home/home.nix; }
         ];
+        t70 = mkMachine [
+          system/t70/configuration.nix
+          home-manager.nixosModules.home-manager
+          { home-manager.users.s = import home/s.nix; }
+        ];
       };
       devShells.default =
         with import nixpkgs { inherit system; };

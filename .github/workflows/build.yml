@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        machine: ["t1000", "t800"]
+        machine: ["t1000", "t800", "t70"]
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4.1.7
