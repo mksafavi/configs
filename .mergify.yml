@@ -5,6 +5,7 @@ pull_request_rules:
       - "author=mksafavi"
       - "status-success=build (t1000)"
       - "status-success=build (t800)"
+      - "status-success=build (t70)"
       - "status-success=build-devshell"
     actions:
       merge:
