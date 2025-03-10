@@ -4,6 +4,7 @@
     ./base/gc.nix
     ./base/fish.nix
     ./base/network.nix
+    ./base/internet.nix
     ./base/utils.nix
     ./base/media.nix
     ./base/gaming.nix

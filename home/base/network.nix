@@ -2,18 +2,13 @@
 {
   home.packages = with pkgs; [
     wget
-    firefox
-    chromium
-    telegram-desktop
     bandwhich
     nload
     aria
     dprox
     nmap
     yt-dlp
-    localsend
     tun2proxy
-    authenticator
     dig
   ];
   home.file.".config/aria2/aria2.conf".text = ''
