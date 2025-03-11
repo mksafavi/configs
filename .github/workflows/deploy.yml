@@ -1,0 +1,90 @@
+name: deploy flake
+
+on:
+  workflow_dispatch: # allows manual triggering
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-devshell:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4.1.7
+
+      - uses: webfactory/ssh-agent@v0.9.0
+        with:
+            ssh-private-key: ${{ secrets.DEPLOY_SSH_PRIVATE_KEY }}
+
+      - name: Add known host
+        env:
+          KNOWN_HOST: ${{ secrets.DEPLOY_SSH_KNOWN_HOST }}
+        run:
+          echo $KNOWN_HOST >> ~/.ssh/known_hosts
+
+      - name: ZeroTier
+        uses: zerotier/github-action@v1.0.1
+        with:
+          network_id: ${{ secrets.ZEROTIER_NETWORK_ID }}
+          auth_token: ${{ secrets.ZEROTIER_CENTRAL_TOKEN }}
+
+      - uses: DeterminateSystems/nix-installer-action@main
+
+      - run: |
+          nix build .#devShells.default
+
+      - shell: bash
+        env:
+          USERNAME: ${{ secrets.ZEROTIER_HOST_USERNAME }}
+          HOSTIP: ${{ secrets.ZEROTIER_HOST_IP }}
+        run: |
+          nix-copy-closure --to $USERNAME"@$HOSTIP" result
+
+
+
+  deploy-machine:
+    strategy:
+      fail-fast: false
+      matrix:
+        machine: ["t1000", "t800", "t70"]
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4.1.7
+
+      - uses: webfactory/ssh-agent@v0.9.0
+        with:
+            ssh-private-key: ${{ secrets.DEPLOY_SSH_PRIVATE_KEY }}
+
+      - name: Add known host
+        env:
+          KNOWN_HOST: ${{ secrets.DEPLOY_SSH_KNOWN_HOST }}
+        run:
+          echo $KNOWN_HOST >> ~/.ssh/known_hosts
+
+      - name: ZeroTier
+        uses: zerotier/github-action@v1.0.1
+        with:
+          network_id: ${{ secrets.ZEROTIER_NETWORK_ID }}
+          auth_token: ${{ secrets.ZEROTIER_CENTRAL_TOKEN }}
+
+      - uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: true
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          docker-images: true
+          swap-storage: true
+
+      - uses: DeterminateSystems/nix-installer-action@main
+
+      - run: |
+          nix build .#nixosConfigurations.${{ matrix.machine }}.config.system.build.toplevel
+
+      - shell: bash
+        env:
+          USERNAME: ${{ secrets.ZEROTIER_HOST_USERNAME }}
+          HOSTIP: ${{ secrets.ZEROTIER_HOST_IP }}
+        run: |
+          nix-copy-closure --to $USERNAME"@$HOSTIP" result
