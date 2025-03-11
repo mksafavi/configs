@@ -28,6 +28,8 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  services.zerotierone.enable = true;
+
   # Set your time zone.
   time.timeZone = "Asia/Tehran";
 
