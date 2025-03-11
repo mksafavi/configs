@@ -14,20 +14,14 @@
       url = "github:hero-persson/FjordLauncherUnlocked";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-    deploy-rs = {
-      url = "github:serokell/deploy-rs";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
   };
 
   outputs =
     inputs@{
-      self,
       nixpkgs-unstable,
       home-manager,
       flake-programs-sqlite,
       fjordlauncher,
-      deploy-rs,
       ...
     }:
     let
@@ -81,38 +75,6 @@
           { home-manager.users.s = import home/s.nix; }
         ];
       };
-      deploy.nodes = {
-        t1000 = {
-          interactiveSudo = true;
-          sshUser = "mk";
-          hostname = "t1000.lan";
-          fastConnection = true;
-          profiles.system = {
-            user = "root";
-            path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.t1000;
-          };
-        };
-        t800 = {
-          interactiveSudo = true;
-          sshUser = "home";
-          hostname = "t800.lan";
-          fastConnection = true;
-          profiles.system = {
-            user = "root";
-            path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.t800;
-          };
-        };
-        t70 = {
-          interactiveSudo = true;
-          sshUser = "s";
-          hostname = "t70.lan";
-          fastConnection = true;
-          profiles.system = {
-            user = "root";
-            path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.t70;
-          };
-        };
-      };
       devShells.default =
         with import nixpkgs { inherit system; };
         mkShell {
@@ -120,9 +82,7 @@
             nixd
             nixfmt-rfc-style
             nix-index
-            pkgs.deploy-rs
           ];
         };
-      checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) deploy-rs.lib;
     };
 }
