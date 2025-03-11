@@ -78,6 +78,9 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  # Disable sleep on lid close
+  services.logind.lidSwitch = "ignore";
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
