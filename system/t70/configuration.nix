@@ -16,6 +16,8 @@
   boot.loader.grub.useOSProber = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  hardware.nvidiaOptimus.disable = true;
+
   networking.hostName = "t70"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
