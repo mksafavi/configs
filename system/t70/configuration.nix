@@ -29,6 +29,16 @@
   networking.networkmanager.enable = true;
   networking.interfaces.enp5s0.wakeOnLan.enable = true;
 
+  services.atticd = {
+    enable = true;
+    environmentFile = "/home/s/.config/attic/env";
+    settings = {
+      listen = "[::]:8080";
+
+      jwt = { };
+    };
+  };
+
   services.zerotierone.enable = true;
 
   # Set your time zone.
@@ -51,7 +61,9 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [ ];
+    packages = with pkgs; [
+      attic-client
+    ];
   };
 
   # added user to trusted users
@@ -87,7 +99,9 @@
   services.logind.lidSwitch = "ignore";
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [
+    8080 # atticd
+  ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
