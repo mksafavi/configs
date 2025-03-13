@@ -1,7 +1,7 @@
 # NixOS configurations
-![](https://github.com/mksafavi/configs/actions/workflows/build.yml/badge.svg)
-![](https://github.com/mksafavi/configs/actions/workflows/build-devshell.yml/badge.svg)
 ![](https://github.com/mksafavi/configs/actions/workflows/update-flake.yml/badge.svg)
+![](https://github.com/mksafavi/configs/actions/workflows/build.yml/badge.svg)
+![](https://github.com/mksafavi/configs/actions/workflows/deploy.yml/badge.svg)
 
 ## build nixos: 
 This will build nixos and also the home-manager configuration as module.
