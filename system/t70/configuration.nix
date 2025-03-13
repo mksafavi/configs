@@ -27,6 +27,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.interfaces.enp5s0.wakeOnLan.enable = true;
 
   services.zerotierone.enable = true;
 
