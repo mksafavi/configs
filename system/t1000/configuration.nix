@@ -107,6 +107,7 @@
     packages = with pkgs; [
       kdePackages.kamera
       gphoto2fs
+      attic-client
     ];
   };
   # added user to trusted users
