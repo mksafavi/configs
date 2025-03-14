@@ -33,7 +33,7 @@ jobs:
           nix build .#devShells.default
 
       - run: |
-          attic push ${{ secrets.ATTIC_CACHE }} result
+          attic push --jobs ${{ vars.ATTIC_JOBS }} ${{ secrets.ATTIC_CACHE }} result
 
   deploy-machine:
     strategy:
@@ -75,4 +75,4 @@ jobs:
           nix build .#nixosConfigurations.${{ matrix.machine }}.config.system.build.toplevel
 
       - run: |
-          attic push ${{ secrets.ATTIC_CACHE }} result
+          attic push --jobs ${{ vars.ATTIC_JOBS }} ${{ secrets.ATTIC_CACHE }} result
