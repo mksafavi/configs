@@ -21,7 +21,6 @@
   home.packages = with pkgs; [
     loopbackwebcam
     nvtopPackages.amd
-    blender-hip
     zerotierone
     calibre
     thunderbird
