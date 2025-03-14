@@ -110,6 +110,7 @@
       kdePackages.kamera
       gphoto2fs
       attic-client
+      zerotierone
     ];
   };
   # added user to trusted users
