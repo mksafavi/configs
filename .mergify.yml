@@ -3,10 +3,7 @@ pull_request_rules:
     conditions:
       - "head~=update/flake-lock"
       - "author=mksafavi"
-      - "status-success=build-machine (t1000)"
-      - "status-success=build-machine (t800)"
-      - "status-success=build-machine (t70)"
-      - "status-success=build-devshell"
+      - "status-success=build"
     actions:
       merge:
         method: rebase
