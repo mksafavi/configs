@@ -28,13 +28,14 @@
     let
       system = "x86_64-linux";
       nixpkgs = nixpkgs-unstable;
+      specialArgs = {
+        inherit nixpkgs; # get nixpkgs for setting nix.registry.nixpkgs in system/configuration.nix file
+      };
       mkMachine =
         machineModules:
-        nixpkgs.lib.nixosSystem rec {
+        nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = {
-            inherit nixpkgs; # get nixpkgs for setting nix.registry.nixpkgs in system/configuration.nix file
-          };
+          inherit specialArgs;
           modules = [
             system/configuration.nix
             home-manager.nixosModules.default
@@ -76,6 +77,7 @@
           { home-manager.users.s = import home/s.nix; }
         ];
       };
+
       devShells.default =
         with import nixpkgs { inherit system; };
         mkShell {
