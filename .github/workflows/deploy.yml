@@ -7,39 +7,7 @@ on:
       - main
 
 jobs:
-  deploy-devshell:
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v4.1.7
-
-      - name: ZeroTier
-        uses: zerotier/github-action@v1.0.1
-        with:
-          network_id: ${{ secrets.ZEROTIER_NETWORK_ID }}
-          auth_token: ${{ secrets.ZEROTIER_CENTRAL_TOKEN }}
-
-      - uses: DeterminateSystems/nix-installer-action@main
-
-      - name: Setup Attic cache
-        uses: ryanccn/attic-action@v0
-        with:
-          endpoint: ${{ secrets.ATTIC_ENDPOINT }}
-          cache: ${{ secrets.ATTIC_CACHE }}
-          token: ${{ secrets.ATTIC_PUSH_TOKEN }}
-          skip-push: true
-          skip-use: true
-
-      - run: |
-          nix build .#devShells.default
-
-      - run: |
-          attic push --jobs ${{ vars.ATTIC_JOBS }} ${{ secrets.ATTIC_CACHE }} result
-
-  deploy-machine:
-    strategy:
-      fail-fast: false
-      matrix:
-        machine: ["t1000", "t800", "t70"]
+  deploy:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4.1.7
@@ -72,7 +40,4 @@ jobs:
           skip-use: true
 
       - run: |
-          nix build .#nixosConfigurations.${{ matrix.machine }}.config.system.build.toplevel
-
-      - run: |
-          attic push --jobs ${{ vars.ATTIC_JOBS }} ${{ secrets.ATTIC_CACHE }} result
+          nix run github:Mic92/nix-fast-build -- --retries ${{ vars.NIX_BUILD_RETRIES }} --skip-cached --no-nom --attic-cache ${{ secrets.ATTIC_CACHE }}
