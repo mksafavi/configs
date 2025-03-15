@@ -18,6 +18,7 @@
 
   outputs =
     inputs@{
+      self,
       nixpkgs-unstable,
       home-manager,
       flake-programs-sqlite,
@@ -82,7 +83,20 @@
             nixd
             nixfmt-rfc-style
             nix-index
+            nix-fast-build
           ];
         };
+
+      checks =
+        let
+          systemsAttrs = nixpkgs.lib.mapAttrs' (
+            n: c: nixpkgs.lib.nameValuePair "nixos-${n}" c.config.system.build.toplevel
+          ) self.nixosConfigurations;
+          devShellsAttrs = nixpkgs.lib.mapAttrs' (
+            n: nixpkgs.lib.nameValuePair "devShell-${n}"
+          ) self.devShells;
+
+        in
+        (systemsAttrs // devShellsAttrs);
     };
 }
