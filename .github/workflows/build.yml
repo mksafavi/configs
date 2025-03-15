@@ -8,20 +8,7 @@ on:
       - main
 
 jobs:
-  build-devshell:
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v4.1.7
-
-      - uses: DeterminateSystems/nix-installer-action@main
-      - run: |
-          nix build .#devShells.default
-
-  build-machine:
-    strategy:
-      fail-fast: false
-      matrix:
-        machine: ["t1000", "t800", "t70"]
+  build:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4.1.7
@@ -37,6 +24,6 @@ jobs:
           swap-storage: true
 
       - uses: DeterminateSystems/nix-installer-action@main
+
       - run: |
-          nix build .#nixosConfigurations.${{ matrix.machine }}.config.system.build.toplevel
-                
+          nix run github:Mic92/nix-fast-build -- --retries ${{ vars.NIX_BUILD_RETRIES }} --skip-cached --no-nom
