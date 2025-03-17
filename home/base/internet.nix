@@ -6,5 +6,6 @@
     telegram-desktop
     localsend
     authenticator
+    turnon
   ];
 }
