@@ -32,7 +32,6 @@
           inherit system;
           inherit specialArgs;
           modules = [
-            system/configuration.nix
             inputs.home-manager.nixosModules.default
             {
               home-manager = {
