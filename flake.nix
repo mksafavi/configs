@@ -2,6 +2,8 @@
   description = "NixOS configurations";
   inputs = {
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    nixpkgs-yuzu-unstable.url = "nixpkgs/f20a0c955555fb68cfc72886d7476de2aacd1b4e";
+    nixpkgs-yabridge-unstable.url = "nixpkgs/03ddbd42cbdfbca5ce5583a8c1b526f36c0d46f3"; # wineWow64Packages.unstable: 9.19 -> 9.20
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -20,6 +22,8 @@
     inputs@{
       self,
       nixpkgs-unstable,
+      nixpkgs-yuzu-unstable,
+      nixpkgs-yabridge-unstable,
       home-manager,
       flake-programs-sqlite,
       fjordlauncher,
@@ -48,12 +52,7 @@
               nix.registry.nixpkgs.flake = nixpkgs;
             }
             {
-              nixpkgs.overlays = [
-                (import overlays/yuzu.overlay.nix)
-                (import overlays/yabridge.overlay.nix)
-                (import overlays/scripts.overlay.nix)
-                fjordlauncher.overlays.default
-              ];
+              nixpkgs = (import ./overlays.nix) { inherit inputs; };
             }
             flake-programs-sqlite.nixosModules.programs-sqlite
           ] ++ machineModules;
