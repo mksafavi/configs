@@ -78,17 +78,6 @@
     xkb.variant = "";
   };
 
-  # Enable CUPS to print documents.
-  services.printing = {
-    listenAddresses = [ "*:631" ];
-    allowFrom = [ "all" ];
-    browsing = true;
-    defaultShared = true;
-    openFirewall = true;
-    enable = true;
-    drivers = [ pkgs.splix ];
-  };
-
   fonts.packages = with pkgs; [
     wqy_zenhei
   ];
@@ -112,7 +101,6 @@
       kdePackages.kamera
       gphoto2fs
       attic-client
-      zerotierone
     ];
   };
   # added user to trusted users

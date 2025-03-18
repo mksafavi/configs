@@ -18,17 +18,6 @@
   };
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "t800"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-  networking.interfaces.enp3s0.wakeOnLan.enable = true;
-
   security.sudo.extraConfig = ''
     Defaults pwfeedback
   '';
@@ -109,13 +98,6 @@
     xkb.variant = "";
   };
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-  };
-
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -171,18 +153,7 @@
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
 
-  # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [
-    1716 # kdeconnect
-    53317 #localsend
-  ];
-  networking.firewall.allowedUDPPorts = [
-    1716 # kdeconnect
-    53317 #localsend
-  ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

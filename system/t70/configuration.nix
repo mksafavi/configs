@@ -9,6 +9,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../configuration.nix
+    ./networking.nix
   ];
 
   # Bootloader.
@@ -18,29 +19,6 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   hardware.nvidiaOptimus.disable = true;
-
-  networking.hostName = "t70"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-  networking.interfaces.enp5s0.wakeOnLan.enable = true;
-
-  services.atticd = {
-    enable = true;
-    environmentFile = "/home/s/.config/attic/env";
-    settings = {
-      listen = "[::]:8080";
-
-      jwt = { };
-    };
-  };
-
-  services.zerotierone.enable = true;
 
   # Set your time zone.
   time.timeZone = "Asia/Tehran";
@@ -93,19 +71,9 @@
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
   # Disable sleep on lid close
   services.logind.lidSwitch = "ignore";
 
-  # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [
-    8080 # atticd
-  ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
