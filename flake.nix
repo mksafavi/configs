@@ -19,19 +19,10 @@
   };
 
   outputs =
-    inputs@{
-      self,
-      nixpkgs-unstable,
-      nixpkgs-yuzu-unstable,
-      nixpkgs-yabridge-unstable,
-      home-manager,
-      flake-programs-sqlite,
-      fjordlauncher,
-      ...
-    }:
+    { self, ... }@inputs:
     let
       system = "x86_64-linux";
-      nixpkgs = nixpkgs-unstable;
+      nixpkgs = inputs.nixpkgs-unstable;
       specialArgs = {
         inherit nixpkgs; # get nixpkgs for setting nix.registry.nixpkgs in system/configuration.nix file
       };
@@ -42,7 +33,7 @@
           inherit specialArgs;
           modules = [
             system/configuration.nix
-            home-manager.nixosModules.default
+            inputs.home-manager.nixosModules.default
             {
               home-manager = {
                 extraSpecialArgs = specialArgs;
@@ -54,7 +45,7 @@
             {
               nixpkgs = (import ./overlays.nix) { inherit inputs; };
             }
-            flake-programs-sqlite.nixosModules.programs-sqlite
+            inputs.flake-programs-sqlite.nixosModules.programs-sqlite # programs database used for commandnotfound hints
           ] ++ machineModules;
         };
     in
