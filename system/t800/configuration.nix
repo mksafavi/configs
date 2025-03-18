@@ -8,6 +8,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../base/nix-configuration.nix
+    ../base/desktop.nix
   ];
 
   # Bootloader.
@@ -30,14 +31,6 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-  services.displayManager.defaultSession = "plasma";
-  services.desktopManager.plasma6.enable = true;
-  services.speechd.enable = false;
-  services.orca.enable = false;
 
   # Enable logitech k400 support
   hardware.logitech.wireless.enable = true;

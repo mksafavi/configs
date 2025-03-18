@@ -12,6 +12,7 @@
     ./networking.nix
     ./audio.nix
     ./virtualization.nix
+    ../base/desktop.nix
   ];
 
   # Bootloader.
@@ -58,25 +59,11 @@
     ];
   };
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-  services.displayManager.defaultSession = "plasma";
-  services.desktopManager.plasma6.enable = true;
-  services.speechd.enable = false;
-  services.orca.enable = false;
-
   services.flatpak.enable = true;
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.settings.General.Experimental = true; # enables Bluetooth battery report
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
-
-  # Configure keymap in X11
-  services.xserver = {
-    xkb.layout = "us";
-    xkb.variant = "";
-  };
 
   fonts.packages = with pkgs; [
     wqy_zenhei
