@@ -12,7 +12,7 @@
 
 {
   imports = [
-    ./services/xray.nix
+    ../services/xray.nix
   ];
   nix = {
     # Garbage Collection
