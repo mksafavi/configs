@@ -29,9 +29,6 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
   # Enable logitech k400 support
   hardware.logitech.wireless.enable = true;
   hardware.logitech.wireless.enableGraphical = true;
@@ -45,7 +42,6 @@
   };
 
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = [ "nvidia" ];
   boot.initrd.kernelModules = [
     "nvidia"
     "nvidia_uvm"
@@ -85,11 +81,6 @@
     package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
 
-  # Configure keymap in X11
-  services.xserver = {
-    xkb.layout = "us";
-    xkb.variant = "";
-  };
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;

@@ -42,10 +42,6 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "amdgpu" ];
-
   hardware.i2c.enable = true;
   hardware.new-lg4ff.enable = true;
   hardware.graphics = {

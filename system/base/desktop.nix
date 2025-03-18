@@ -1,4 +1,3 @@
-
 { config, pkgs, ... }:
 {
   # Enable the KDE Plasma Desktop Environment.
@@ -8,11 +7,4 @@
   services.desktopManager.plasma6.enable = true;
   services.speechd.enable = false;
   services.orca.enable = false;
-
-  # Configure keymap in X11
-  services.xserver = {
-    xkb.layout = "us";
-    xkb.variant = "";
-  };
-
 }
