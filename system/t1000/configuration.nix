@@ -23,10 +23,6 @@
   };
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  security.sudo.extraConfig = ''
-    Defaults pwfeedback
-  '';
-
   # Set your time zone.
   time.timeZone = "Asia/Tehran";
 
