@@ -66,9 +66,6 @@
     "@wheel"
   ];
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   programs.git = {
     enable = true;
     lfs.enable = true;

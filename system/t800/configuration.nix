@@ -52,9 +52,6 @@
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "home";
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   programs.git = {
     enable = true;
     lfs.enable = true;

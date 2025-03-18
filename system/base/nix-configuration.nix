@@ -45,4 +45,7 @@
       configFile = "~/xray_config/direct.json";
     };
   };
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
 }
