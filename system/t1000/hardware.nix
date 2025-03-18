@@ -9,10 +9,12 @@
     options v4l2loopback video_nr=4 exclusive_caps=1
   '';
 
-  hardware.i2c.enable = true;
-  hardware.new-lg4ff.enable = true;
+  hardware.i2c.enable = true; # for rgb control
+
+  hardware.new-lg4ff.enable = true; # Enable LogiTech G29 support
+
   hardware.graphics = {
-    enable32Bit = true; # For 32 bit applications
+    enable32Bit = true;
     extraPackages = with pkgs; [
       amdvlk # unfree alternative to RadV vulkan loader
     ];
