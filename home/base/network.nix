@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     wget
-    bandwhich
     nload
     aria
     dprox

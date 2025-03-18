@@ -15,6 +15,8 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  programs.bandwhich.enable = true;
+
   networking.hostName = "t1000"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 

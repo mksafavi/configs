@@ -87,6 +87,7 @@
     enable = true;
     drivers = [ pkgs.splix ];
   };
+
   fonts.packages = with pkgs; [
     wqy_zenhei
   ];
