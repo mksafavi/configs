@@ -24,6 +24,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
     packages = with pkgs; [
       attic-client
