@@ -47,4 +47,9 @@
   security.sudo.extraConfig = ''
     Defaults pwfeedback
   '';
+
+  programs.git = {
+    enable = true;
+    lfs.enable = true;
+  };
 }

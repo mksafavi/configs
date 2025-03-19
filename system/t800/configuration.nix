@@ -35,10 +35,5 @@
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "home";
 
-  programs.git = {
-    enable = true;
-    lfs.enable = true;
-  };
-
   system.stateVersion = "23.11"; # Don't touch this. Do you remeber the Comment that you read?
 }

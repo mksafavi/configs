@@ -46,11 +46,6 @@
     "@wheel"
   ];
 
-  programs.git = {
-    enable = true;
-    lfs.enable = true;
-  };
-
   programs.gphoto2.enable = true;
   systemd.packages = with pkgs; [ lact ];
 
