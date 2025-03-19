@@ -1,11 +1,5 @@
 { config, ... }:
 {
-  hardware.graphics = { # Enable OpenGL
-    enable = true;
-    enable32Bit = true;
-  };
-
-
   boot.initrd.kernelModules = [
     "nvidia" # Load nvidia driver early
     "nvidia_uvm"
@@ -14,6 +8,11 @@
   ];
 
   boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11_beta ];
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
 
   hardware.nvidia = {
 
@@ -31,8 +30,10 @@
     package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
 
-  hardware.logitech.wireless.enable = true; # Enable logitech k400 support
-  hardware.logitech.wireless.enableGraphical = true;
+  hardware.logitech.wireless = {
+    enable = true; # Enable logitech k400 support
+    enableGraphical = true;
+  };
 
   hardware.new-lg4ff.enable = true; # Enable LogiTech G29 support
 }
