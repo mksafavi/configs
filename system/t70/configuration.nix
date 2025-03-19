@@ -4,6 +4,7 @@
     ./hardware-configuration.nix
     ../base/nix-configuration.nix
     ./networking.nix
+    ./virtualization.nix
   ];
 
   boot.loader.grub.enable = true;
