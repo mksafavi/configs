@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  imports = [
+    ../services/openrgb.nix
+  ];
+
   boot.initrd.kernelModules = [
     "amdgpu" # load amdgpu module early.
     "v4l2loopback" # load v4l2loopback for virtual video devices
@@ -9,7 +13,10 @@
     options v4l2loopback video_nr=4 exclusive_caps=1
   '';
 
-  hardware.i2c.enable = true; # for rgb control
+  services.openrgb = {
+    enable = true;
+    profile = "off";
+  };
 
   hardware.new-lg4ff.enable = true; # Enable LogiTech G29 support
 
