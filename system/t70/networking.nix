@@ -21,7 +21,6 @@
 
   services.aria2 = {
     enable = true;
-    openPorts = true;
     rpcSecretFile = "/var/lib/aria2/aria2-rpc-token";
     settings =
       let
@@ -35,12 +34,25 @@
         save-session-interval = 10;
         listen-port = [ ];
         rpc-listen-port = 6800;
-        rpc-listen-all = true;
       };
   };
+
+  services.caddy = {
+    enable = true;
+
+    virtualHosts."http://${config.networking.hostName}.lan" = {
+      extraConfig = ''
+        handle_path /aria2* {
+          reverse_proxy http://localhost:${toString config.services.aria2.settings.rpc-listen-port}
+        }
+      '';
+    };
+  };
+
   services.zerotierone.enable = true;
 
   networking.firewall.allowedTCPPorts = [
     8080 # atticd
+    80 # caddy
   ];
 }
