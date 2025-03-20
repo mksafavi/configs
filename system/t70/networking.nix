@@ -42,6 +42,10 @@
 
     virtualHosts."http://${config.networking.hostName}.lan" = {
       extraConfig = ''
+        handle_path /ariang* {
+          root * ${pkgs.ariang}/share/ariang
+          file_server
+        }
         handle_path /aria2* {
           reverse_proxy http://localhost:${toString config.services.aria2.settings.rpc-listen-port}
         }
