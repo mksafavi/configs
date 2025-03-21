@@ -31,7 +31,6 @@
     options = {
       calibreLibrary = builtins.elemAt config.services.calibre-server.libraries 0;
       reverseProxyAuth.enable = true;
-      reverseProxyAuth.header = "Authorization";
       enableBookUploading = true;
       enableBookConversion = true;
     };
@@ -76,7 +75,6 @@
 
         reverse_proxy /calibre/web* {
           to http://localhost:${toString config.services.calibre-web.listen.port}
-          header_up Authorization admin
           header_up X-Script-Name /calibre/web
         }
       '';
