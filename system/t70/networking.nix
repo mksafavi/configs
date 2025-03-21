@@ -19,6 +19,26 @@
     };
   };
 
+  services.calibre-server = {
+    enable = true;
+    port = 8089;
+  };
+
+  services.calibre-web = {
+    enable = true;
+    listen.port = 8083;
+
+    options = {
+      calibreLibrary = builtins.elemAt config.services.calibre-server.libraries 0;
+      reverseProxyAuth.enable = true;
+      reverseProxyAuth.header = "Authorization";
+      enableBookUploading = true;
+      enableBookConversion = true;
+    };
+    user = config.services.calibre-server.user;
+    group = config.services.calibre-server.group;
+  };
+
   services.aria2 = {
     enable = true;
     rpcSecretFile = "/var/lib/aria2/aria2-rpc-token";
@@ -48,6 +68,16 @@
         }
         handle_path /aria2* {
           reverse_proxy http://localhost:${toString config.services.aria2.settings.rpc-listen-port}
+        }
+
+        handle_path /calibre/server* {
+          reverse_proxy http://localhost:${toString config.services.calibre-server.port}
+        }
+
+        reverse_proxy /calibre/web* {
+          to http://localhost:${toString config.services.calibre-web.listen.port}
+          header_up Authorization admin
+          header_up X-Script-Name /calibre/web
         }
       '';
     };
