@@ -53,6 +53,7 @@
         save-session-interval = 10;
         listen-port = [ ];
         rpc-listen-port = 6800;
+        dir = "/mnt/storage/downloads";
       };
   };
 
