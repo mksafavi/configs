@@ -62,8 +62,8 @@
 
     virtualHosts."http://${config.networking.hostName}.lan" = {
       extraConfig = ''
-        handle_path /ariang* {
-          root * ${pkgs.ariang}/share/ariang
+        handle /ariang* {
+          root * ${pkgs.ariang}/share
           file_server
         }
         handle_path /aria2* {
