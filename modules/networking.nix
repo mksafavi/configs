@@ -1,5 +1,16 @@
 { config, pkgs, ... }:
 {
+  imports = [
+    ../services/xray.nix
+  ];
+
+  services = {
+    xray-proxy = {
+      enable = true;
+      configFile = "~/xray_config/direct.json";
+    };
+  };
+
   services.openssh.enable = true;
 
   services.avahi = {

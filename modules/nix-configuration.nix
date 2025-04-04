@@ -7,9 +7,6 @@
 }:
 
 {
-  imports = [
-    ../services/xray.nix
-  ];
   nix = {
     # Garbage Collection
     gc = {
@@ -32,13 +29,6 @@
       auto-optimise-store = true;
       keep-outputs = true;
       keep-derivations = true;
-    };
-  };
-
-  services = {
-    xray-proxy = {
-      enable = true;
-      configFile = "~/xray_config/direct.json";
     };
   };
 
