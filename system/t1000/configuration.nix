@@ -3,11 +3,11 @@
   imports = [
     ./hardware-configuration.nix
     ./hardware.nix
-    ../base/nix-configuration.nix
+    ../../modules/nix-configuration.nix
     ./networking.nix
     ./audio.nix
     ./virtualization.nix
-    ../base/desktop.nix
+    ../../modules/desktop.nix
   ];
 
   boot.loader = {

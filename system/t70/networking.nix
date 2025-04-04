@@ -2,7 +2,7 @@
 {
 
   imports = [
-    ../base/networking.nix
+    ../../modules/networking.nix
   ];
 
   networking.hostName = "t70";

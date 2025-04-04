@@ -3,8 +3,8 @@
   imports = [
     ./hardware-configuration.nix
     ./hardware.nix
-    ../base/nix-configuration.nix
-    ../base/desktop.nix
+    ../../modules/nix-configuration.nix
+    ../../modules/desktop.nix
     ./audio.nix
   ];
 

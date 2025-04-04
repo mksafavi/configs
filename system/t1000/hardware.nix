@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ../services/openrgb.nix
+    ../../services/openrgb.nix
   ];
 
   boot.initrd.kernelModules = [

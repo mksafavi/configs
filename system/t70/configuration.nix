@@ -2,7 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../base/nix-configuration.nix
+    ../../modules/nix-configuration.nix
     ./networking.nix
     ./virtualization.nix
   ];
