@@ -19,6 +19,7 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
 
+  home-manager.users.home = import ./home.nix;
   users.users.home = {
     isNormalUser = true;
     description = "home";

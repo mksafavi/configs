@@ -27,7 +27,7 @@
         inherit nixpkgs; # get nixpkgs for setting nix.registry.nixpkgs in system/configuration.nix file
       };
       mkMachine =
-        machineModules:
+        machineModule:
         nixpkgs.lib.nixosSystem {
           inherit system;
           inherit specialArgs;
@@ -45,23 +45,15 @@
               nixpkgs = (import ./overlays.nix) { inherit inputs; };
             }
             inputs.flake-programs-sqlite.nixosModules.programs-sqlite # programs database used for commandnotfound hints
-          ] ++ machineModules;
+            machineModule
+          ];
         };
     in
     {
       nixosConfigurations = {
-        t1000 = mkMachine [
-          system/t1000/configuration.nix
-          { home-manager.users.mk = import system/t1000/mk.nix; }
-        ];
-        t800 = mkMachine [
-          system/t800/configuration.nix
-          { home-manager.users.home = import system/t800/home.nix; }
-        ];
-        t70 = mkMachine [
-          system/t70/configuration.nix
-          { home-manager.users.s = import system/t70/s.nix; }
-        ];
+        t1000 = mkMachine system/t1000/configuration.nix;
+        t800 = mkMachine system/t800/configuration.nix;
+        t70 = mkMachine system/t70/configuration.nix;
       };
 
       devShells.default =

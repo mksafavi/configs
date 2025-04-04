@@ -23,6 +23,7 @@
 
   services.flatpak.enable = true;
 
+  home-manager.users.mk = import ./mk.nix;
   users.users.mk = {
     isNormalUser = true;
     description = "mk";
