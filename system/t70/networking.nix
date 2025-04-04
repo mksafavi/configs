@@ -22,6 +22,7 @@
   services.calibre-server = {
     enable = true;
     port = 8089;
+    extraFlags = [ "--url-prefix=/calibre/server" ];
   };
 
   services.calibre-web = {
