@@ -2,13 +2,13 @@
 {
   #home tv pc configurations
   imports = [
-    ./base/gc.nix
-    ./base/fish.nix
-    ./base/network.nix
-    ./base/internet.nix
-    ./base/utils.nix
-    ./base/media.nix
-    ./base/gaming.nix
+    ../../home/gc.nix
+    ../../home/fish.nix
+    ../../home/network.nix
+    ../../home/internet.nix
+    ../../home/utils.nix
+    ../../home/media.nix
+    ../../home/gaming.nix
   ];
   home.username = "home";
   home.homeDirectory = "/home/home";

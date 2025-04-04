@@ -52,15 +52,15 @@
       nixosConfigurations = {
         t1000 = mkMachine [
           system/t1000/configuration.nix
-          { home-manager.users.mk = import home/mk.nix; }
+          { home-manager.users.mk = import system/t1000/mk.nix; }
         ];
         t800 = mkMachine [
           system/t800/configuration.nix
-          { home-manager.users.home = import home/home.nix; }
+          { home-manager.users.home = import system/t800/home.nix; }
         ];
         t70 = mkMachine [
           system/t70/configuration.nix
-          { home-manager.users.s = import home/s.nix; }
+          { home-manager.users.s = import system/t70/s.nix; }
         ];
       };
 

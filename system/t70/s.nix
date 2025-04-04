@@ -1,10 +1,10 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./base/gc.nix
-    ./base/fish.nix
-    ./base/network.nix
-    ./base/utils.nix
+    ../../home/gc.nix
+    ../../home/fish.nix
+    ../../home/network.nix
+    ../../home/utils.nix
   ];
 
   home.username = "s";

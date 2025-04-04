@@ -1,15 +1,15 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./base/gc.nix
-    ./base/fish.nix
-    ./base/network.nix
-    ./base/internet.nix
-    ./base/utils.nix
-    ./base/media.nix
-    ./base/gaming.nix
-    ./base/music.nix
-    ./base/dev.nix
+    ../../home/gc.nix
+    ../../home/fish.nix
+    ../../home/network.nix
+    ../../home/internet.nix
+    ../../home/utils.nix
+    ../../home/media.nix
+    ../../home/gaming.nix
+    ../../home/music.nix
+    ../../home/dev.nix
   ];
 
   home.username = "mk";
