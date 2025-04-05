@@ -34,6 +34,11 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  services.journald.extraConfig = ''
+    SystemMaxUse=1G
+    MaxRetentionSec=7day
+  '';
+
   security.sudo.extraConfig = ''
     Defaults pwfeedback
   '';
