@@ -20,6 +20,11 @@
 
   hardware.new-lg4ff.enable = true; # Enable LogiTech G29 support
 
+  services.xserver = {
+    enable = true; # Enable the X11 windowing system.
+    videoDrivers = [ "amdgpu" ]; # Load amdgpu driver for Xorg and Wayland
+  };
+
   hardware.graphics = {
     enable = true;
     enable32Bit = true;

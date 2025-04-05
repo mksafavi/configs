@@ -14,6 +14,11 @@
     enable32Bit = true;
   };
 
+  services.xserver = {
+    enable = true; # Enable the X11 windowing system.
+    videoDrivers = [ "nvidia" ]; # Load nvidia driver for Xorg and Wayland
+  };
+
   hardware.nvidia = {
 
     modesetting.enable = true; # Modesetting is required.
