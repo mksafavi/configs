@@ -3,6 +3,7 @@
   imports = [
     ./hardware-configuration.nix
     ./hardware.nix
+    ./networking.nix
     ../../modules/nix-configuration.nix
     ../../modules/desktop.nix
     ./audio.nix
