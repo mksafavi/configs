@@ -19,6 +19,18 @@
     };
   };
 
+  systemd.packages = with pkgs; [ lms ];
+  systemd.services.lmsd = {
+    enable = true;
+  };
+  users.groups.lms = { };
+  users.users.lms = {
+    group = config.users.groups.lms.name;
+    isSystemUser = true;
+    createHome = true;
+    home = "/var/lms";
+  };
+
   services.calibre-server = {
     enable = true;
     port = 8089;
@@ -78,6 +90,10 @@
         reverse_proxy /calibre/web* {
           to http://localhost:${toString config.services.calibre-web.listen.port}
           header_up X-Script-Name /calibre/web
+        }
+
+        handle_path  /lms* {
+          reverse_proxy http://localhost:5082
         }
       '';
     };
