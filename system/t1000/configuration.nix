@@ -48,7 +48,6 @@
   ];
 
   programs.gphoto2.enable = true;
-  systemd.packages = with pkgs; [ lact ];
 
   system.stateVersion = "23.11"; # Don't touch this. Do you remeber the Comment that you read?
 }
