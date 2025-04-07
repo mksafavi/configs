@@ -22,6 +22,7 @@
   systemd.packages = with pkgs; [ lms ];
   systemd.services.lmsd = {
     enable = true;
+    wantedBy = [ "multi-user.target" ];
   };
   users.groups.lms = { };
   users.users.lms = {
