@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 {
 
   imports = [
@@ -98,6 +103,29 @@
         }
       '';
     };
+  };
+
+  services.samba = {
+    enable = true;
+    package = pkgs.samba4Full;
+    openFirewall = true;
+
+    settings =
+      {
+        public = {
+          browseable = "yes";
+          "read only" = "no";
+          "guest ok" = "yes";
+          path = "/mnt/storage/public";
+        };
+      }
+      // lib.attrsets.genAttrs [ "mk" "marsami" "arani" "anna" ] (name: {
+        browseable = "yes";
+        "read only" = "no";
+        "valid users" = name;
+        path = "/mnt/storage/${name}";
+      });
+
   };
 
   services.zerotierone.enable = true;
