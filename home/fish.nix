@@ -2,8 +2,9 @@
 {
   programs.fish = {
     enable = true;
-      interactiveShellInit = ''
+    interactiveShellInit = ''
       set -gx EDITOR vim
+      set fish_greeting # Disable greeting
     '';
   };
 
