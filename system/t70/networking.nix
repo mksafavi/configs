@@ -112,6 +112,12 @@
 
     settings =
       {
+        global = {
+          "vfs objects" = "recycle";
+          "recycle:repository" = ".recycle";
+          "recycle:keeptree" = "yes";
+          "recycle:versions" = "yes";
+        };
         public = {
           browseable = "yes";
           "read only" = "no";
