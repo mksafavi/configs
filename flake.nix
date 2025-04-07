@@ -63,6 +63,8 @@
             nixd
             nixfmt-rfc-style
             nix-index
+            nix-tree
+            wl-clipboard # needed by nix-tree
             nix-fast-build
           ];
         };
