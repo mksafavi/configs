@@ -1,7 +1,7 @@
 # NixOS configurations
-![](https://github.com/mksafavi/configs/actions/workflows/update-flake.yml/badge.svg)
-![](https://github.com/mksafavi/configs/actions/workflows/build.yml/badge.svg)
-![](https://github.com/mksafavi/configs/actions/workflows/deploy.yml/badge.svg)
+[![](https://github.com/mksafavi/configs/actions/workflows/update-flake.yml/badge.svg)](https://github.com/mksafavi/configs/actions/workflows/update-flake.yml)
+[![](https://github.com/mksafavi/configs/actions/workflows/build.yml/badge.svg)](https://github.com/mksafavi/configs/actions/workflows/build.yml)
+[![](https://github.com/mksafavi/configs/actions/workflows/deploy.yml/badge.svg)](https://github.com/mksafavi/configs/actions/workflows/deploy.yml)
 
 ## build all outputs:
 Load the devShell and use nix-fast-build:
