@@ -74,6 +74,7 @@
         rpc-listen-port = 6800;
         dir = "/mnt/storage/downloads";
       };
+    downloadDirPermission = "0777";
   };
 
   services.caddy = {
