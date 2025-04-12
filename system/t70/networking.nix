@@ -89,6 +89,8 @@
           "recycle:repository" = ".recycle";
           "recycle:keeptree" = "yes";
           "recycle:versions" = "yes";
+          "wide links" = "yes";
+          "allow insecure wide links" = "yes";
         };
         public = {
           browseable = "yes";
