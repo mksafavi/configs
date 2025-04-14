@@ -14,7 +14,10 @@
     efi.canTouchEfiVariables = true;
     timeout = 3;
   };
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  boot.tmp.useTmpfs = true;
 
   time.timeZone = "Asia/Tehran";
 
