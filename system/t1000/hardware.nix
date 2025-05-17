@@ -5,7 +5,6 @@
   ];
 
   boot.initrd.kernelModules = [
-    "amdgpu" # load amdgpu module early.
     "v4l2loopback" # load v4l2loopback for virtual video devices
   ];
   boot.extraModulePackages = [ pkgs.linuxPackages_latest.v4l2loopback ];
@@ -23,6 +22,10 @@
   services.xserver = {
     enable = true; # Enable the X11 windowing system.
     videoDrivers = [ "amdgpu" ]; # Load amdgpu driver for Xorg and Wayland
+  };
+
+  hardware.amdgpu = {
+    initrd.enable = true;
   };
 
   hardware.graphics = {
