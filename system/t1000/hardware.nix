@@ -26,17 +26,15 @@
 
   hardware.amdgpu = {
     initrd.enable = true;
+    amdvlk = { # unfree alternative to RadV vulkan loader
+      enable = true;
+      support32Bit.enable = true;
+    };
   };
 
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
-    extraPackages = with pkgs; [
-      amdvlk # unfree alternative to RadV vulkan loader
-    ];
-    extraPackages32 = with pkgs; [
-      driversi686Linux.amdvlk # unfree alternative to RadV vulkan loader
-    ];
   };
 
   hardware.bluetooth = {
