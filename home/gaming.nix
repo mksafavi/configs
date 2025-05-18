@@ -1,13 +1,10 @@
 { config, pkgs, ... }:
 {
   home.packages = with pkgs; [
-    (lutris.override {
-      extraPkgs = pkgs: [
-        wineWowPackages.stable
-        gamescope
-      ];
-    })
+    lutris
+    wineWowPackages.stable
     umu-launcher
+    gamescope
     vulkan-tools
     steam
     protontricks
