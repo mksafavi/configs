@@ -10,6 +10,7 @@
     umu-launcher
     vulkan-tools
     steam
+    protontricks
     oversteer
     mangohud
     yuzu
