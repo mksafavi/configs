@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   imports = [
     ../../services/openrgb.nix
@@ -7,7 +7,7 @@
   boot.initrd.kernelModules = [
     "v4l2loopback" # load v4l2loopback for virtual video devices
   ];
-  boot.extraModulePackages = [ pkgs.linuxPackages_latest.v4l2loopback ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
   boot.extraModprobeConfig = ''
     options v4l2loopback video_nr=4 exclusive_caps=1
   '';
