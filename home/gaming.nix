@@ -5,9 +5,9 @@
       extraPkgs = pkgs: [
         wineWowPackages.stable
         gamescope
-        umu-launcher
       ];
     })
+    umu-launcher
     vulkan-tools
     steam
     oversteer
