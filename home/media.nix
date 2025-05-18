@@ -4,6 +4,7 @@
     vlc
     kooha
     termsonic
+    ffmpeg
   ];
   programs.mpv = {
     enable = true;
