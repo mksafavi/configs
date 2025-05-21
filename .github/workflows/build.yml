@@ -13,15 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4.1.7
 
-      - uses: jlumbroso/free-disk-space@main
+      - uses: wimpysworld/nothing-but-nix@main
         with:
-          tool-cache: true
-          android: true
-          dotnet: true
-          haskell: true
-          large-packages: true
-          docker-images: true
-          swap-storage: true
+          hatchet-protocol: 'holster'
+          root-safe-haven: '10240'
 
       - uses: DeterminateSystems/nix-installer-action@main
 

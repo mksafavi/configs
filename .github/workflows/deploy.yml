@@ -12,21 +12,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4.1.7
 
+      - uses: wimpysworld/nothing-but-nix@main
+        with:
+          hatchet-protocol: 'holster'
+          root-safe-haven: '10240'
+
       - name: ZeroTier
         uses: zerotier/github-action@v1.0.1
         with:
           network_id: ${{ secrets.ZEROTIER_NETWORK_ID }}
           auth_token: ${{ secrets.ZEROTIER_CENTRAL_TOKEN }}
-
-      - uses: jlumbroso/free-disk-space@main
-        with:
-          tool-cache: true
-          android: true
-          dotnet: true
-          haskell: true
-          large-packages: true
-          docker-images: true
-          swap-storage: true
 
       - uses: DeterminateSystems/nix-installer-action@main
 
