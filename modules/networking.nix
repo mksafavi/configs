@@ -1,13 +1,10 @@
 { config, pkgs, ... }:
 {
-  imports = [
-    ../services/xray.nix
-  ];
 
   services = {
-    xray-proxy = {
+    xray = {
       enable = true;
-      configFile = "~/xray_config/direct.json";
+      settingsFile = "/etc/xray/config.json";
     };
   };
 
