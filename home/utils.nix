@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     lf
     vim
+    python3
     jq
     bc
     usbutils
