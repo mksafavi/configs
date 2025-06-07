@@ -2,7 +2,6 @@ name: build flake
 
 on:
   workflow_dispatch: # allows manual triggering
-  pull_request:
   push:
     branches-ignore:
       - main
