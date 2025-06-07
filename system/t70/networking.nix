@@ -55,6 +55,7 @@
         dir = "/mnt/storage/downloads";
       };
     downloadDirPermission = "0777";
+    serviceUMask = "0002";
   };
 
   services.caddy = {
