@@ -23,5 +23,6 @@
     pwgen
     nix-profile-diff
     termdown
+    tmux
   ];
 }
