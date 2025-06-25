@@ -47,4 +47,6 @@
     enable = true;
     lfs.enable = true;
   };
+
+  programs.command-not-found.enable = true;
 }
