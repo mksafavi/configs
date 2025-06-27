@@ -1,10 +1,18 @@
 { config, pkgs, ... }:
 {
 
+  imports = [
+    ../services/attic-watch-store.nix
+  ];
+
   services = {
     xray = {
       enable = true;
       settingsFile = "/etc/xray/config.json";
+    };
+
+    attic-watch-store = {
+      enable = true;
     };
   };
 
