@@ -32,10 +32,12 @@ with lib;
       systemd.packages = [ pkgs.attic-client ];
       systemd.services.attic-watch-store = {
         wantedBy = [ "multi-user.target" ];
+        after = [ "network-online.target" ];
         description = "Attic watch store";
         serviceConfig = {
           ExecStart = "${pkgs.attic-client}/bin/attic watch-store ${cache}";
           Restart = "on-failure";
+          RestartSec = 30;
         };
       };
     };
