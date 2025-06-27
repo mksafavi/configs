@@ -14,6 +14,12 @@
 
   networking.interfaces.enp5s0.wakeOnLan.enable = true;
 
+  services.v2raya = {
+    enable = true;
+    cliPackage = pkgs.xray;
+  };
+  networking.nftables.enable = true; # TODO: temporary
+
   services.atticd = {
     enable = true;
     environmentFile = "/home/s/.config/attic/env";
@@ -111,8 +117,16 @@
 
   services.zerotierone.enable = true;
 
-  networking.firewall.allowedTCPPorts = [
-    8080 # atticd
-    80 # caddy
-  ];
+  networking.firewall.allowedTCPPorts =
+    [
+      8080 # atticd
+      80 # caddy
+    ]
+    ++ [
+      # v2raya
+      2017
+      20170
+      20171
+      20172
+    ];
 }
