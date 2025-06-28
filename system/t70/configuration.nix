@@ -5,6 +5,7 @@
     ../../modules/nix-configuration.nix
     ./networking.nix
     ./virtualization.nix
+    ../../services/flake-build.nix
   ];
 
   boot.loader.grub = {
@@ -42,6 +43,11 @@
   ];
 
   services.logind.lidSwitch = "ignore";
+
+  services.flake-build = {
+    enable = false;
+    flake = "github:mksafavi/configs#checks";
+  };
 
   system.stateVersion = "24.11"; # Don't touch this. Do you remeber the Comment that you read?
 }
