@@ -33,6 +33,7 @@ with lib;
       systemd.services.attic-watch-store = {
         wantedBy = [ "multi-user.target" ];
         after = [ "network-online.target" ];
+        requires = [ "network-online.target" ];
         description = "Attic watch store";
         serviceConfig = {
           ExecStart = "${pkgs.attic-client}/bin/attic watch-store ${cache}";
