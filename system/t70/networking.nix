@@ -18,7 +18,7 @@
     enable = true;
     cliPackage = pkgs.xray;
   };
-  networking.nftables.enable = true; # TODO: temporary
+  networking.nftables.enable = true; # needed for v2rayA tproxy
 
   services.atticd = {
     enable = true;
