@@ -5,6 +5,7 @@
     ../../modules/nix-configuration.nix
     ./networking.nix
     ./virtualization.nix
+    ../../modules/desktop.nix
     ../../services/flake-build.nix
   ];
 
