@@ -5,11 +5,6 @@
   ...
 }:
 {
-
-  imports = [
-    ../../modules/networking.nix
-  ];
-
   networking.hostName = "t70";
 
   networking.interfaces.enp5s0.wakeOnLan.enable = true;

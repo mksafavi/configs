@@ -2,10 +2,8 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/nix-configuration.nix
     ./networking.nix
     ./virtualization.nix
-    ../../modules/desktop.nix
   ];
 
   boot.loader.grub = {

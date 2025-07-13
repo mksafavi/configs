@@ -45,6 +45,9 @@
               nixpkgs = (import ./overlays.nix) { inherit inputs; };
             }
             inputs.flake-programs-sqlite.nixosModules.programs-sqlite # programs database used for commandnotfound hints
+            modules/networking.nix
+            modules/desktop.nix
+            modules/nix-configuration.nix
             machineModule
           ];
         };

@@ -1,9 +1,5 @@
 { config, pkgs, ... }:
 {
-  imports = [
-    ../../modules/networking.nix
-  ];
-
   networking.hostName = "t800";
 
   networking.interfaces.enp3s0.wakeOnLan.enable = true;

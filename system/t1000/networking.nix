@@ -1,8 +1,5 @@
 { config, pkgs, lib, ... }:
 {
-  imports = [
-    ../../modules/networking.nix
-  ];
 
   networking.hostName = "t1000";
 
