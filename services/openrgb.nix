@@ -4,21 +4,20 @@
   pkgs,
   ...
 }:
-with lib;
 {
   options = {
 
     services.openrgb = {
-      enable = mkOption {
-        type = types.bool;
+      enable = lib.mkOption {
+        type = lib.types.bool;
         default = false;
         description = lib.mdDoc ''
           Whether to run OpenRGB
         '';
       };
 
-      profile = mkOption {
-        type = types.str;
+      profile = lib.mkOption {
+        type = lib.types.str;
         description = lib.mdDoc "OpenRGB profile to apply. Use the OpenRGB Gui to create the profiles";
       };
     };
@@ -29,7 +28,7 @@ with lib;
       cfg = config.services.openrgb;
       profile = toString cfg.profile;
     in
-    mkIf cfg.enable {
+    lib.mkIf cfg.enable {
       systemd.packages = [ pkgs.openrgb ];
       hardware.i2c.enable = true; # for ram rgb control
 
