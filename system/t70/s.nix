@@ -10,7 +10,6 @@
   home.username = "s";
   home.homeDirectory = "/home/s";
   home.stateVersion = "24.11";
-  services.kdeconnect.enable = true;
 
   home.packages = with pkgs; [
   ];
