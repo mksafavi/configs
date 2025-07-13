@@ -5,7 +5,22 @@
   ...
 }:
 {
-  networking.hostName = "t70";
+  modules.networking = {
+    enable = true;
+    hostName = "t70";
+    firewall.allowedTCPPorts =
+      [
+        8080 # atticd
+        80 # caddy
+      ]
+      ++ [
+        # v2raya
+        2017
+        20170
+        20171
+        20172
+      ];
+  };
 
   networking.interfaces.enp5s0.wakeOnLan.enable = true;
 
@@ -112,16 +127,4 @@
 
   services.zerotierone.enable = true;
 
-  networking.firewall.allowedTCPPorts =
-    [
-      8080 # atticd
-      80 # caddy
-    ]
-    ++ [
-      # v2raya
-      2017
-      20170
-      20171
-      20172
-    ];
 }

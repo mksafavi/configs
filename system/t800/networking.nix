@@ -1,15 +1,18 @@
 { config, pkgs, ... }:
 {
-  networking.hostName = "t800";
+
+  modules.networking = {
+    enable = true;
+    hostName = "t800";
+    firewall.allowedTCPPorts = [
+      1716 # kdeconnect
+      53317 # localsend
+    ];
+    firewall.allowedUDPPorts = [
+      1716 # kdeconnect
+      53317 # localsend
+    ];
+  };
 
   networking.interfaces.enp3s0.wakeOnLan.enable = true;
-
-  networking.firewall.allowedTCPPorts = [
-    1716 # kdeconnect
-    53317 #localsend
-  ];
-  networking.firewall.allowedUDPPorts = [
-    1716 # kdeconnect
-    53317 #localsend
-  ];
 }
