@@ -7,6 +7,8 @@
     ./audio.nix
   ];
 
+  modules.desktop.kde.enable = true;
+
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
