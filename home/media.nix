@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     vlc
-    kooha
     termsonic
     ffmpeg
   ];
