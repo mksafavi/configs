@@ -48,6 +48,9 @@
             modules/networking.nix
             modules/desktop.nix
             modules/nix-configuration.nix
+            services/attic-watch-store.nix
+            services/openrgb.nix
+            services/flake-build.nix
             machineModule
           ];
         };

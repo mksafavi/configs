@@ -1,9 +1,5 @@
 { config, pkgs, ... }:
 {
-  imports = [
-    ../../services/openrgb.nix
-  ];
-
   boot.initrd.kernelModules = [
     "v4l2loopback" # load v4l2loopback for virtual video devices
   ];

@@ -5,9 +5,6 @@
   ...
 }:
 {
-  imports = [
-    ../services/attic-watch-store.nix
-  ];
   options = {
 
     modules.networking = {
