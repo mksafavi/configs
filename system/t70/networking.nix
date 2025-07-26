@@ -124,7 +124,4 @@
       });
 
   };
-
-  services.zerotierone.enable = true;
-
 }
