@@ -17,9 +17,4 @@
 
   networking.interfaces.enp14s0.wakeOnLan.enable = true;
 
-  users.users.mk = {
-    packages = with pkgs; [
-      zerotierone
-    ];
-  };
 }
