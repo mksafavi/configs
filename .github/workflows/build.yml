@@ -6,6 +6,10 @@ on:
 
 jobs:
   build:
+    strategy:
+      fail-fast: false
+      matrix:
+        drv: ["devShell-default", "nixos-t1000", "nixos-t800", "nixos-t70"]
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4.1.7
@@ -18,4 +22,4 @@ jobs:
       - uses: DeterminateSystems/nix-installer-action@main
 
       - run: |
-          nix run github:Mic92/nix-fast-build -- --retries ${{ vars.NIX_BUILD_RETRIES }} --skip-cached --no-nom
+          nix run github:Mic92/nix-fast-build -- --flake ".#checks.${{ matrix.drv }}" --retries ${{ vars.NIX_BUILD_RETRIES }} --skip-cached --no-nom
