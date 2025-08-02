@@ -14,21 +14,11 @@
         80 # caddy
       ]
       ++ [
-        # v2raya
-        2017
-        20170
-        20171
-        20172
+        20170 # proxy
       ];
   };
 
   networking.interfaces.enp5s0.wakeOnLan.enable = true;
-
-  services.v2raya = {
-    enable = true;
-    cliPackage = pkgs.xray;
-  };
-  networking.nftables.enable = true; # needed for v2rayA tproxy
 
   services.atticd = {
     enable = true;
