@@ -12,7 +12,7 @@
     mangohud
     yuzu
     rpcs3
-    ryujinx
+    ryubing
     duckstation
     pcsx2
   ];
