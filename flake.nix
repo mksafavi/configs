@@ -4,6 +4,7 @@
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     nixpkgs-yuzu-unstable.url = "nixpkgs/f20a0c955555fb68cfc72886d7476de2aacd1b4e";
     nixpkgs-yabridge-unstable.url = "nixpkgs/03ddbd42cbdfbca5ce5583a8c1b526f36c0d46f3"; # wineWow64Packages.unstable: 9.19 -> 9.20
+    nixpkgs-duckstation-unstable.url = "nixpkgs/94def634a20494ee057c76998843c015909d6311";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
