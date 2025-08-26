@@ -4,7 +4,7 @@
     gc = {
       # Garbage Collection home-manager
       automatic = true;
-      frequency = "weekly";
+      dates = "weekly";
       options = "--delete-older-than 30d";
     };
   };
