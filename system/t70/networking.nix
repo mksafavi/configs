@@ -64,6 +64,10 @@
     serviceUMask = "0002";
   };
 
+  services.timetagger = {
+    enable = true;
+  };
+
   services.caddy = {
     enable = true;
 
@@ -79,6 +83,10 @@
 
         handle_path  /lms* {
           reverse_proxy http://localhost:5082
+        }
+
+        handle  /timetagger* {
+          reverse_proxy http://localhost:8082
         }
       '';
     };

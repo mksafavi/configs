@@ -50,6 +50,7 @@
             modules/desktop.nix
             modules/nix-configuration.nix
             services/attic-watch-store.nix
+            services/timetagger.nix
             services/openrgb.nix
             services/flake-build.nix
             machineModule
