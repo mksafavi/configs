@@ -34,10 +34,10 @@ and after entering the correct password will say (`Shared connection to <host_ip
 This is not an error and it's working fine. (There might be a solution for this but idk)
 
 ```
-nixos-rebuild build  --flake ./#machineName --target-host user@host --use-remote-sudo --install-bootloader
+nixos-rebuild build  --flake ./#machineName --target-host user@host --sudo --install-bootloader
 ```
 
 ### build on another machine and copy the result to the target-host:
 ```
-nixos-rebuild build  --flake ./#machineName --build-host user@build-host --target-host user@host --use-remote-sudo --install-bootloader
+nixos-rebuild build  --flake ./#machineName --build-host user@build-host --target-host user@host --sudo --install-bootloader
 ```
