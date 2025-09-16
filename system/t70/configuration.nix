@@ -52,7 +52,7 @@
     "@wheel"
   ];
 
-  services.logind.lidSwitch = "ignore";
+  services.logind.settings.Login.HandleLidSwitch = "ignore";
 
   system.stateVersion = "24.11"; # Don't touch this. Do you remeber the Comment that you read?
 }
