@@ -6,22 +6,33 @@
 }:
 {
   options = {
-    modules.desktop.kde = {
-      enable = lib.mkOption {
-        type = lib.types.bool;
-        default = false;
-        description = lib.mdDoc ''
-          Whether to enable kde plasma desktop
-        '';
+    modules.desktop = {
+      fonts = {
+        enable = lib.mkOption {
+          type = lib.types.bool;
+          default = true;
+          description = lib.mdDoc ''
+            Whether to enable fonts
+          '';
+        };
       };
-    };
-    modules.desktop.hypr = {
-      enable = lib.mkOption {
-        type = lib.types.bool;
-        default = false;
-        description = lib.mdDoc ''
-          Whether to enable Hyprland desktop
-        '';
+      kde = {
+        enable = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+          description = lib.mdDoc ''
+            Whether to enable kde plasma desktop
+          '';
+        };
+      };
+      hypr = {
+        enable = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+          description = lib.mdDoc ''
+            Whether to enable Hyprland desktop
+          '';
+        };
       };
     };
   };
@@ -31,6 +42,18 @@
       cfg = config.modules.desktop;
     in
     lib.mkMerge [
+      (lib.mkIf cfg.fonts.enable {
+        fonts = {
+          fontconfig.useEmbeddedBitmaps = true;
+          packages = with pkgs; [
+            font-awesome
+            wqy_zenhei
+            noto-fonts
+            noto-fonts-color-emoji
+          ];
+        };
+      })
+
       (lib.mkIf cfg.kde.enable {
         services.displayManager.sddm.enable = true;
         services.displayManager.sddm.wayland.enable = true;
@@ -44,8 +67,8 @@
           xkb.layout = "us";
           xkb.variant = "";
         };
-
       })
+
       (lib.mkIf cfg.hypr.enable {
         services.hypridle.enable = true;
         programs.hyprlock.enable = true;
