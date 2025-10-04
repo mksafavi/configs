@@ -9,7 +9,10 @@
   programs.emacs = {
     enable = true;
     package = pkgs.emacs-gtk;
-    extraPackages = epkgs: [ epkgs.vterm ];
+    extraPackages = epkgs: [
+      epkgs.vterm
+      epkgs.tree-sitter-langs
+    ];
   };
 
   services.emacs = {
