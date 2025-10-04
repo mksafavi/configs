@@ -6,8 +6,6 @@
     ./virtualization.nix
   ];
 
-  modules.desktop.kde.enable = true;
-
   boot.loader.grub = {
     enable = true;
     device = "/dev/disk/by-id/ata-CT240BX500SSD1_2143E5DE2944";
