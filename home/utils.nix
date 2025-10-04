@@ -25,4 +25,10 @@
     termdown
     tmux
   ];
+
+  programs.yazi = {
+    enable = true;
+    enableFishIntegration = true;
+    enableBashIntegration = true;
+  };
 }
