@@ -1,15 +1,9 @@
 { config, pkgs, ... }:
 {
-  #home tv pc configurations
-  imports = [
-    ../../home/gc.nix
-    ../../home/fish.nix
-    ../../home/network.nix
-    ../../home/internet.nix
-    ../../home/utils.nix
-    ../../home/media.nix
-    ../../home/gaming.nix
-  ];
+  homeModules.internet.enable = true;
+  homeModules.media.enable = true;
+  homeModules.gaming.enable = true;
+
   home.username = "home";
   home.homeDirectory = "/home/home";
   home.stateVersion = "23.11";

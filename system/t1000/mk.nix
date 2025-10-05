@@ -1,16 +1,10 @@
 { config, pkgs, ... }:
 {
-  imports = [
-    ../../home/gc.nix
-    ../../home/fish.nix
-    ../../home/network.nix
-    ../../home/internet.nix
-    ../../home/utils.nix
-    ../../home/media.nix
-    ../../home/gaming.nix
-    ../../home/music.nix
-    ../../home/dev.nix
-  ];
+  homeModules.internet.enable = true;
+  homeModules.media.enable = true;
+  homeModules.gaming.enable = true;
+  homeModules.music.enable = true;
+  homeModules.dev.enable = true;
 
   home.username = "mk";
   home.homeDirectory = "/home/mk";
