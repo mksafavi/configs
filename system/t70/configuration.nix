@@ -35,16 +35,6 @@
     ];
   };
 
-  home-manager.users.anna = import ./anna.nix;
-  users.users.anna = {
-    isNormalUser = true;
-    description = "anna";
-    extraGroups = [
-      "networkmanager"
-      "docker"
-    ];
-  };
-
   nix.settings.trusted-users = [
     "root"
     "@wheel"
