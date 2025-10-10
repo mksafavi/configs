@@ -78,21 +78,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-duckstation-unstable": {
-      "locked": {
-        "lastModified": 1753939845,
-        "narHash": "sha256-K2ViRJfdVGE8tpJejs8Qpvvejks1+A4GQej/lBk5y7I=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "94def634a20494ee057c76998843c015909d6311",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "rev": "94def634a20494ee057c76998843c015909d6311",
-        "type": "indirect"
-      }
-    },
     "nixpkgs-unstable": {
       "locked": {
         "lastModified": 1759381078,
@@ -143,7 +128,6 @@
         "fjordlauncher": "fjordlauncher",
         "flake-programs-sqlite": "flake-programs-sqlite",
         "home-manager": "home-manager",
-        "nixpkgs-duckstation-unstable": "nixpkgs-duckstation-unstable",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nixpkgs-yabridge-unstable": "nixpkgs-yabridge-unstable",
         "nixpkgs-yuzu-unstable": "nixpkgs-yuzu-unstable"

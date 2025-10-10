@@ -3,9 +3,6 @@
   overlays = [
     (final: prev: { yuzu = inputs.nixpkgs-yuzu-unstable.legacyPackages.${prev.system}.yuzu; })
     (final: prev: {
-      duckstation = inputs.nixpkgs-duckstation-unstable.legacyPackages.${prev.system}.duckstation;
-    })
-    (final: prev: {
       yabridge = inputs.nixpkgs-yabridge-unstable.legacyPackages.${prev.system}.yabridge;
       yabridgectl = inputs.nixpkgs-yabridge-unstable.legacyPackages.${prev.system}.yabridgectl;
     })
