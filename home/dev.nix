@@ -19,6 +19,7 @@
   config = lib.mkIf config.homeModules.dev.enable {
     home.packages = with pkgs; [
       ripgrep
+      semgrep
       fd
       shellcheck
     ];
