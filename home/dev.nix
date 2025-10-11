@@ -29,7 +29,9 @@
       package = pkgs.emacs-gtk;
       extraPackages = epkgs: [
         epkgs.vterm
+        epkgs.tree-sitter
         epkgs.tree-sitter-langs
+        epkgs.treesit-grammars.with-all-grammars
       ];
     };
 
