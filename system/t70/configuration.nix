@@ -11,8 +11,6 @@
     device = "/dev/disk/by-id/ata-CT240BX500SSD1_2143E5DE2944";
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
   boot.tmp.useTmpfs = true;
 
   hardware.nvidiaOptimus.disable = true; # disable nvidia gpu
