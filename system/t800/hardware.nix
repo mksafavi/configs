@@ -16,7 +16,6 @@
   hardware.nvidia = {
 
     modesetting.enable = true; # Modesetting is required.
-    forceFullCompositionPipeline = true; # Fix screen tearing
     nvidiaPersistenced = true; # to enable gpu in headless mode
 
     powerManagement.enable = true;
