@@ -1,8 +1,5 @@
 { config, ... }:
 {
-
-  boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11_beta ];
-
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -14,16 +11,12 @@
   };
 
   hardware.nvidia = {
-
     modesetting.enable = true; # Modesetting is required.
     nvidiaPersistenced = true; # to enable gpu in headless mode
 
     powerManagement.enable = true;
     open = true;
-
     nvidiaSettings = true;
-
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
   boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
 
