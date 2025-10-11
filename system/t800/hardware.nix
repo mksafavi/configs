@@ -19,15 +19,14 @@
     forceFullCompositionPipeline = true; # Fix screen tearing
     nvidiaPersistenced = true; # to enable gpu in headless mode
 
-    powerManagement.enable = false; # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-    powerManagement.finegrained = false; # Fine-grained power management. Turns off GPU when not in use. Experimental and only works on modern Nvidia GPUs (Turing or newer).
-
+    powerManagement.enable = true;
     open = true;
 
     nvidiaSettings = true;
 
     package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
+  boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
 
   hardware.logitech.wireless = {
     enable = true; # Enable logitech k400 support
