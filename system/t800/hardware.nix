@@ -1,11 +1,5 @@
 { config, ... }:
 {
-  boot.initrd.kernelModules = [
-    "nvidia" # Load nvidia driver early
-    "nvidia_uvm"
-    "nvidia_drm"
-    "nvidia_modeset"
-  ];
 
   boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11_beta ];
 
