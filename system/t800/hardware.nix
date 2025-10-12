@@ -16,7 +16,6 @@
     open = true;
     nvidiaSettings = true;
   };
-  boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
 
   hardware.logitech.wireless = {
     enable = true; # Enable logitech k400 support
