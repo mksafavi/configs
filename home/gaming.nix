@@ -27,7 +27,6 @@
       protontricks
       oversteer
       mangohud
-      yuzu
       rpcs3
       ryubing
       duckstation
