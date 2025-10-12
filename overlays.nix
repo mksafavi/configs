@@ -11,11 +11,5 @@
       nix-profile-diff = (prev.callPackage ./scripts/nix-profile-diff.nix { });
     })
     inputs.fjordlauncher.overlays.default
-
-    (final: prev: {
-      nix-fast-build = prev.nix-fast-build.overrideAttrs (old: {
-        propagatedBuildInputs = old.propagatedBuildInputs ++ [ prev.bashInteractive ];
-      });
-    })
   ];
 }
