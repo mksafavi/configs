@@ -3,7 +3,7 @@
   home.packages = with pkgs; [
     wget
     nload
-    aria
+    aria2
     dprox
     nmap
     yt-dlp
