@@ -36,6 +36,12 @@
     enable = true;
     upgrade = false;
     flake = "github:mksafavi/configs#${config.networking.hostName}";
+    dates = "03:00";
+    allowReboot = true;
+    rebootWindow = {
+      lower = "04:00";
+      upper = "05:00";
+    };
   };
 
   nixpkgs.config.allowUnfree = true;
