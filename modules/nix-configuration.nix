@@ -32,6 +32,12 @@
     };
   };
 
+  system.autoUpgrade = {
+    enable = true;
+    upgrade = false;
+    flake = "github:mksafavi/configs#${config.networking.hostName}";
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   services.journald.extraConfig = ''
