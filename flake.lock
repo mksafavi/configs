@@ -78,6 +78,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-lms-module": {
+      "locked": {
+        "lastModified": 1762775044,
+        "narHash": "sha256-OiOU4lqZvTgWqbEfb9gUi4GLkjw+RZWJm26/7VbMGAs=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "4206b425d50c6d8c56f4012f4db1ab9bf314211b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "pull/440607/head",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-unstable": {
       "locked": {
         "lastModified": 1762596750,
@@ -113,6 +129,7 @@
         "fjordlauncher": "fjordlauncher",
         "flake-programs-sqlite": "flake-programs-sqlite",
         "home-manager": "home-manager",
+        "nixpkgs-lms-module": "nixpkgs-lms-module",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nixpkgs-yabridge-unstable": "nixpkgs-yabridge-unstable"
       }

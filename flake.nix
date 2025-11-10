@@ -3,6 +3,7 @@
   inputs = {
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     nixpkgs-yabridge-unstable.url = "nixpkgs/03ddbd42cbdfbca5ce5583a8c1b526f36c0d46f3"; # wineWow64Packages.unstable: 9.19 -> 9.20
+    nixpkgs-lms-module.url = "github:NixOS/nixpkgs/pull/440607/head";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -35,6 +36,7 @@
               disabledModules = [
               ];
             })
+            ("${inputs.nixpkgs-lms-module}/nixos/modules/services/audio/lms.nix")
             inputs.home-manager.nixosModules.default
             {
               home-manager = {

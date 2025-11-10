@@ -30,17 +30,8 @@
     };
   };
 
-  systemd.packages = with pkgs; [ lms ];
-  systemd.services.lmsd = {
+  services.lms = {
     enable = true;
-    wantedBy = [ "multi-user.target" ];
-  };
-  users.groups.lms = { };
-  users.users.lms = {
-    group = config.users.groups.lms.name;
-    isSystemUser = true;
-    createHome = true;
-    home = "/var/lms";
   };
 
   services.aria2 = {
