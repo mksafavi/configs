@@ -3,6 +3,7 @@
   inputs = {
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     nixpkgs-yabridge-unstable.url = "nixpkgs/03ddbd42cbdfbca5ce5583a8c1b526f36c0d46f3"; # wineWow64Packages.unstable: 9.19 -> 9.20
+    nixpkgs-441565.url = "nixpkgs/af0d1d900bf25def45873cbee6c43d48f97a5e7f"; # nixos/autoUpgrade: add runGarbageCollection option
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -31,6 +32,12 @@
           inherit system;
           inherit specialArgs;
           modules = [
+            ({
+              disabledModules = [
+                ("${nixpkgs}/nixos/modules/tasks/auto-upgrade.nix")
+              ];
+            })
+            ("${inputs.nixpkgs-441565}/nixos/modules/tasks/auto-upgrade.nix")
             inputs.home-manager.nixosModules.default
             {
               home-manager = {

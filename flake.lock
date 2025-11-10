@@ -78,6 +78,21 @@
         "type": "github"
       }
     },
+    "nixpkgs-441565": {
+      "locked": {
+        "lastModified": 1758572730,
+        "narHash": "sha256-1pCbXteiE+gdQhPKsOSn1nnTTWMpr0cBA5zD6Sbna4A=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "af0d1d900bf25def45873cbee6c43d48f97a5e7f",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "rev": "af0d1d900bf25def45873cbee6c43d48f97a5e7f",
+        "type": "indirect"
+      }
+    },
     "nixpkgs-unstable": {
       "locked": {
         "lastModified": 1762596750,
@@ -113,6 +128,7 @@
         "fjordlauncher": "fjordlauncher",
         "flake-programs-sqlite": "flake-programs-sqlite",
         "home-manager": "home-manager",
+        "nixpkgs-441565": "nixpkgs-441565",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nixpkgs-yabridge-unstable": "nixpkgs-yabridge-unstable"
       }
