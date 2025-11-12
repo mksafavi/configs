@@ -37,6 +37,7 @@
       "audio"
       "camera"
       "docker"
+      "i2c"
     ];
     packages = with pkgs; [
       kdePackages.kamera
