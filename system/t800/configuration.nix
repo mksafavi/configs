@@ -28,6 +28,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "i2c"
     ];
   };
   nix.settings.trusted-users = [
