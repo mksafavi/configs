@@ -11,5 +11,6 @@
 
   home.packages = with pkgs; [
     fjordlauncher
+# TODO:  remove this and add a desktop icon to a local flake on ~/games/minecraft
   ];
 }
