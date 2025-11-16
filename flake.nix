@@ -14,7 +14,6 @@
     };
     fjordlauncher = {
       url = "github:hero-persson/FjordLauncherUnlocked";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
 
