@@ -3,10 +3,7 @@ pull_request_rules:
     conditions:
       - "head~=update/flake-lock"
       - "author=mksafavi"
-      - "status-success=build (devShell-default)"
-      - "status-success=build (nixos-t1000)"
-      - "status-success=build (nixos-t800)"
-      - "status-success=build (nixos-t70)"
+      - "status-success=build"
     actions:
       merge:
         method: rebase
