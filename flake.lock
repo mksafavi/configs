@@ -1,26 +1,5 @@
 {
   "nodes": {
-    "fjordlauncher": {
-      "inputs": {
-        "libnbtplusplus": "libnbtplusplus",
-        "nixpkgs": [
-          "nixpkgs-unstable"
-        ]
-      },
-      "locked": {
-        "lastModified": 1755977907,
-        "narHash": "sha256-OekJhGvxoSqOeHcbP8+N9cbLuG4EGVnePuYcE7oI8PM=",
-        "owner": "hero-persson",
-        "repo": "FjordLauncherUnlocked",
-        "rev": "f41634f748b3922ce00e7e90bf206a990cca2fde",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hero-persson",
-        "repo": "FjordLauncherUnlocked",
-        "type": "github"
-      }
-    },
     "flake-programs-sqlite": {
       "inputs": {
         "nixpkgs": [
@@ -59,22 +38,6 @@
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "libnbtplusplus": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1699286814,
-        "narHash": "sha256-yy0q+bky80LtK1GWzz7qpM+aAGrOqLuewbid8WT1ilk=",
-        "owner": "PrismLauncher",
-        "repo": "libnbtplusplus",
-        "rev": "23b955121b8217c1c348a9ed2483167a6f3ff4ad",
-        "type": "github"
-      },
-      "original": {
-        "owner": "PrismLauncher",
-        "repo": "libnbtplusplus",
         "type": "github"
       }
     },
@@ -126,7 +89,6 @@
     },
     "root": {
       "inputs": {
-        "fjordlauncher": "fjordlauncher",
         "flake-programs-sqlite": "flake-programs-sqlite",
         "home-manager": "home-manager",
         "nixpkgs-lms-module": "nixpkgs-lms-module",

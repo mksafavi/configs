@@ -10,6 +10,5 @@
   services.kdeconnect.enable = true;
 
   home.packages = with pkgs; [
-    fjordlauncher
   ];
 }
