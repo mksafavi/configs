@@ -21,6 +21,7 @@
       lutris
       wineWowPackages.stable
       umu-launcher
+      faugus-launcher
       gamescope
       vulkan-tools
       steam
