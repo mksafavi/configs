@@ -24,6 +24,7 @@
     nix-profile-diff
     termdown
     tmux
+    imagemagick
   ];
 
   programs.yazi = {
