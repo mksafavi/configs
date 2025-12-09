@@ -25,6 +25,7 @@
     termdown
     tmux
     imagemagick
+    net-tools
   ];
 
   programs.yazi = {
