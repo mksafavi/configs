@@ -85,10 +85,20 @@
           buildInputs = [
             nixd
             nixfmt-rfc-style
+            nixfmt-tree
             nix-index
             nix-tree
             wl-clipboard # needed by nix-tree
             nix-fast-build
+          ];
+        };
+
+      devShells.lint =
+        with import nixpkgs { inherit system; };
+        mkShell {
+          buildInputs = [
+            nixfmt-rfc-style
+            nixfmt-tree
           ];
         };
 

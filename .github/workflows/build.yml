@@ -5,6 +5,16 @@ on:
   push:
 
 jobs:
+  lint:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v6.0.1
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: rrbutani/use-nix-shell-action@v1
+        with:
+          devShell: .#devShells.lint
+      - run: |
+          treefmt --ci --excludes  "*/hardware-configuration.nix"
   build:
     runs-on: ubuntu-22.04
     steps:
