@@ -8,14 +8,13 @@
   modules.networking = {
     enable = true;
     hostName = "t70";
-    firewall.allowedTCPPorts =
-      [
-        8080 # atticd
-        80 # caddy
-      ]
-      ++ [
-        20170 # proxy
-      ];
+    firewall.allowedTCPPorts = [
+      8080 # atticd
+      80 # caddy
+    ]
+    ++ [
+      20170 # proxy
+    ];
   };
 
   networking.interfaces.enp5s0.wakeOnLan.enable = true;
@@ -87,29 +86,28 @@
     enable = true;
     openFirewall = true;
 
-    settings =
-      {
-        global = {
-          "vfs objects" = "recycle";
-          "recycle:repository" = ".recycle";
-          "recycle:keeptree" = "yes";
-          "recycle:versions" = "yes";
-          "wide links" = "yes";
-          "allow insecure wide links" = "yes";
-        };
-        public = {
-          browseable = "yes";
-          "read only" = "no";
-          "guest ok" = "yes";
-          path = "/mnt/storage/public";
-        };
-      }
-      // lib.attrsets.genAttrs [ "mk" "marsami" "arani" "anna" ] (name: {
+    settings = {
+      global = {
+        "vfs objects" = "recycle";
+        "recycle:repository" = ".recycle";
+        "recycle:keeptree" = "yes";
+        "recycle:versions" = "yes";
+        "wide links" = "yes";
+        "allow insecure wide links" = "yes";
+      };
+      public = {
         browseable = "yes";
         "read only" = "no";
-        "valid users" = name;
-        path = "/mnt/storage/${name}";
-      });
+        "guest ok" = "yes";
+        path = "/mnt/storage/public";
+      };
+    }
+    // lib.attrsets.genAttrs [ "mk" "marsami" "arani" "anna" ] (name: {
+      browseable = "yes";
+      "read only" = "no";
+      "valid users" = name;
+      path = "/mnt/storage/${name}";
+    });
 
   };
 }
