@@ -19,13 +19,13 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v6.0.1
-
       - uses: wimpysworld/nothing-but-nix@main
         with:
           hatchet-protocol: 'holster'
           root-safe-haven: '10240'
-
       - uses: DeterminateSystems/nix-installer-action@main
-
+      - uses: rrbutani/use-nix-shell-action@v1
+        with:
+          devShell: .#devShells.default
       - run: |
-          nix run github:Mic92/nix-fast-build -- --retries ${{ vars.NIX_BUILD_RETRIES }} --skip-cached --no-nom
+          nix-fast-build --retries ${{ vars.NIX_BUILD_RETRIES }} --skip-cached --no-nom
