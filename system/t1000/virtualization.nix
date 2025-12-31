@@ -17,11 +17,9 @@
     };
   };
 
-  users.users.mk = {
-    packages = with pkgs; [
-      podman-compose
-      virt-manager
-      gnome-boxes
-    ];
-  };
+  environment.systemPackages = with pkgs; [
+    podman-compose
+    virt-manager
+    gnome-boxes
+  ];
 }
