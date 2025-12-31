@@ -35,13 +35,10 @@
       "wheel"
       "dialout"
       "audio"
-      "camera"
       "docker"
       "i2c"
     ];
     packages = with pkgs; [
-      kdePackages.kamera
-      gphoto2fs
       attic-client
     ];
   };
@@ -50,8 +47,6 @@
     "root"
     "@wheel"
   ];
-
-  programs.gphoto2.enable = true;
 
   system.stateVersion = "23.11"; # Don't touch this. Do you remember the Comment that you read?
 }
