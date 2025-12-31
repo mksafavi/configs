@@ -53,5 +53,5 @@
 
   programs.gphoto2.enable = true;
 
-  system.stateVersion = "23.11"; # Don't touch this. Do you remeber the Comment that you read?
+  system.stateVersion = "23.11"; # Don't touch this. Do you remember the Comment that you read?
 }

@@ -39,5 +39,5 @@
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "home";
 
-  system.stateVersion = "23.11"; # Don't touch this. Do you remeber the Comment that you read?
+  system.stateVersion = "23.11"; # Don't touch this. Do you remember the Comment that you read?
 }
