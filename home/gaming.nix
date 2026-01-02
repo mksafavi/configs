@@ -20,6 +20,7 @@
     home.packages = with pkgs; [
       lutris
       wineWowPackages.stableFull
+      winetricks
       umu-launcher
       faugus-launcher
       gamescope
