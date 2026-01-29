@@ -25,6 +25,8 @@
     opencl.enable = true;
   };
 
+  nixpkgs.config.rocmSupport = true;
+
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
