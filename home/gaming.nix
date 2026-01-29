@@ -31,7 +31,6 @@
       mangohud
       rpcs3
       ryubing
-      duckstation
       pcsx2
     ];
   };
