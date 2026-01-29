@@ -9,6 +9,7 @@
     yt-dlp
     tun2proxy
     dig
+    autossh
   ];
   home.file.".config/aria2/aria2.conf".text = ''
     continue
