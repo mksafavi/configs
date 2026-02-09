@@ -10,6 +10,7 @@
     tun2proxy
     dig
     autossh
+    socks-to-http-proxy
   ];
   home.file.".config/aria2/aria2.conf".text = ''
     continue
