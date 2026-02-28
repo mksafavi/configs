@@ -19,7 +19,7 @@
   config = lib.mkIf config.homeModules.gaming.enable {
     home.packages = with pkgs; [
       lutris
-      wineWowPackages.stableFull
+      wineWow64Packages.stableFull
       winetricks
       umu-launcher
       faugus-launcher
