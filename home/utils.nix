@@ -27,10 +27,4 @@
     imagemagick
     net-tools
   ];
-
-  programs.yazi = {
-    enable = true;
-    enableFishIntegration = true;
-    enableBashIntegration = true;
-  };
 }
