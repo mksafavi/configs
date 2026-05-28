@@ -28,7 +28,7 @@
       scripts = with pkgs.mpvScripts; [
         uosc
         mpris
-        mpv-cheatsheet
+        mpv-cheatsheet-ng
         webtorrent-mpv-hook
         thumbfast
         skipsilence
