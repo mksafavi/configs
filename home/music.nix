@@ -21,7 +21,7 @@
       yabridge
       yabridgectl
       reaper
-      helvum
+      crosspipe
       noise-repellent
     ];
 
