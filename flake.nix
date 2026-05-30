@@ -62,6 +62,7 @@
             inputs.flake-programs-sqlite.nixosModules.programs-sqlite # programs database used for commandnotfound hints
             modules/networking.nix
             modules/desktop.nix
+            modules/gc.nix
             modules/nix-configuration.nix
             services/attic-watch-store.nix
             services/timetagger.nix

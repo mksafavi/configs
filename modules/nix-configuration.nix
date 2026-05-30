@@ -8,13 +8,6 @@
 
 {
   nix = {
-    # Garbage Collection
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 30d"; # reverd when this is merged: https://github.com/NixOS/nix/pull/10426
-    };
-
     # Flakes settings
     package = pkgs.nixVersions.latest;
     registry.nixpkgs.flake = nixpkgs; # use nixpkgs for flake commands instead of downloading flake-registry
