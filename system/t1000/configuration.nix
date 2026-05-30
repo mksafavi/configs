@@ -8,6 +8,7 @@
     ./virtualization.nix
   ];
 
+  modules.gc.enable = false;
   modules.desktop.kde.enable = true;
 
   boot.loader = {

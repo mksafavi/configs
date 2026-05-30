@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 {
+  homeModules.gc.enable = false;
   homeModules.internet.enable = true;
   homeModules.media.enable = true;
   homeModules.gaming.enable = true;
