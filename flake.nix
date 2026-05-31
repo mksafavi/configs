@@ -24,6 +24,7 @@
       nixpkgs = inputs.nixpkgs-unstable;
       specialArgs = {
         inherit nixpkgs; # get nixpkgs for setting nix.registry.nixpkgs in system/configuration.nix file
+        programs-sqlite-db = inputs.flake-programs-sqlite.packages.${system}.programs-sqlite;
       };
       mkMachine =
         machineModule:
@@ -59,7 +60,6 @@
             {
               nixpkgs = (import ./overlays.nix) { inherit inputs; };
             }
-            inputs.flake-programs-sqlite.nixosModules.programs-sqlite # programs database used for commandnotfound hints
             modules/networking.nix
             modules/desktop.nix
             modules/gc.nix

@@ -3,6 +3,7 @@
   lib,
   pkgs,
   nixpkgs,
+  programs-sqlite-db,
   ...
 }:
 
@@ -54,4 +55,5 @@
   };
 
   programs.command-not-found.enable = true;
+  programs.command-not-found.dbPath = lib.mkForce programs-sqlite-db;
 }
