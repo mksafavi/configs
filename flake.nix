@@ -84,7 +84,7 @@
         mkShell {
           buildInputs = [
             nixd
-            nixfmt-rfc-style
+            nixfmt
             nixfmt-tree
             nix-index
             nix-tree
@@ -97,7 +97,7 @@
         with import nixpkgs { inherit system; };
         mkShell {
           buildInputs = [
-            nixfmt-rfc-style
+            nixfmt
             nixfmt-tree
           ];
         };
