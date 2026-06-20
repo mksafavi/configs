@@ -11,10 +11,7 @@
       url = "github:wamserma/flake-programs-sqlite";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-    fjordlauncher = {
-      url = "github:hero-persson/FjordLauncherUnlocked";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
+    fjordlauncher.url = "github:hero-persson/FjordLauncherUnlocked";
   };
 
   outputs =
