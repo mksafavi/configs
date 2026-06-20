@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, fjordlauncher, ... }:
 {
   homeModules.gc.enable = false;
   homeModules.internet.enable = true;
@@ -11,6 +11,6 @@
   services.kdeconnect.enable = true;
 
   home.packages = with pkgs; [
-    fjordlauncher
+    fjordlauncher.fjordlauncher
   ];
 }

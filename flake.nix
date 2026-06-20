@@ -22,8 +22,10 @@
     let
       system = "x86_64-linux";
       nixpkgs = inputs.nixpkgs-unstable;
+      fjordlauncher = inputs.fjordlauncher.packages.${system};
       specialArgs = {
         inherit nixpkgs; # get nixpkgs for setting nix.registry.nixpkgs in system/configuration.nix file
+        inherit fjordlauncher;
         programs-sqlite-db = inputs.flake-programs-sqlite.packages.${system}.programs-sqlite;
       };
       mkMachine =
