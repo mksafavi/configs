@@ -1,9 +1,10 @@
-{ config, pkgs, fjordlauncher, ... }:
+{ config, pkgs, ... }:
 {
   homeModules.gc.enable = false;
   homeModules.internet.enable = true;
   homeModules.media.enable = true;
   homeModules.gaming.enable = true;
+  homeModules.gaming.fjordlauncher.enable = true;
 
   home.username = "home";
   home.homeDirectory = "/home/home";
@@ -11,6 +12,5 @@
   services.kdeconnect.enable = true;
 
   home.packages = with pkgs; [
-    fjordlauncher.fjordlauncher
   ];
 }
