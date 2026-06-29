@@ -19,6 +19,8 @@
 
   systemd.network.enable = true;
 
+  systemd.network.wait-online.enable = false;
+  systemd.services.systemd-networkd-wait-online.enable = false;
 
   services.resolved.settings.Resolve = {
     DNSStubListenerExtra = "10.0.0.1";
