@@ -26,7 +26,11 @@
         programs-sqlite-db = inputs.flake-programs-sqlite.packages.${system}.programs-sqlite;
       };
       mkMachine =
-        machineModule:
+        {
+          machineModule,
+          extraModules ? [ ],
+          ...
+        }:
         nixpkgs.lib.nixosSystem {
           inherit system;
           inherit specialArgs;
@@ -68,14 +72,15 @@
             services/openrgb.nix
             services/flake-build.nix
             machineModule
-          ];
+          ]
+          ++ extraModules;
         };
     in
     {
       nixosConfigurations = {
-        t1000 = mkMachine system/t1000/configuration.nix;
-        t800 = mkMachine system/t800/configuration.nix;
-        t70 = mkMachine system/t70/configuration.nix;
+        t1000 = mkMachine { machineModule = system/t1000/configuration.nix; };
+        t800 = mkMachine { machineModule = system/t800/configuration.nix; };
+        t70 = mkMachine { machineModule = system/t70/configuration.nix; };
       };
 
       devShells.default =
