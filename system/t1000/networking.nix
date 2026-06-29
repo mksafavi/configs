@@ -19,4 +19,31 @@
 
   systemd.network.enable = true;
 
+
+  services.resolved.settings.Resolve = {
+    DNSStubListenerExtra = "10.0.0.1";
+  };
+
+  networking.networkmanager.unmanaged = [ "br-microvm" ];
+
+  systemd.network.netdevs."br-microvm" = {
+    netdevConfig = {
+      Name = "br-microvm";
+      Kind = "bridge";
+    };
+  };
+
+  systemd.network.networks."10-br-microvm" = {
+    matchConfig.Name = "br-microvm";
+    networkConfig = {
+      Address = [ "10.0.0.1/24" ];
+      IPMasquerade = "ipv4";
+      ConfigureWithoutCarrier = true;
+    };
+  };
+
+  systemd.network.networks."10-vm-tap" = {
+    matchConfig.Name = "vm-*";
+    networkConfig.Bridge = "br-microvm";
+  };
 }
