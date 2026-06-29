@@ -17,4 +17,6 @@
 
   networking.interfaces.enp14s0.wakeOnLan.enable = true;
 
+  systemd.network.enable = true;
+
 }
