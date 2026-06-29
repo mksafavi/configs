@@ -11,6 +11,10 @@
       url = "github:wamserma/flake-programs-sqlite";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    microvm = {
+      url = "github:microvm-nix/microvm.nix";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
     fjordlauncher.url = "github:hero-persson/FjordLauncherUnlocked";
   };
 
@@ -78,7 +82,12 @@
     in
     {
       nixosConfigurations = {
-        t1000 = mkMachine { machineModule = system/t1000/configuration.nix; };
+        t1000 = mkMachine {
+          machineModule = system/t1000/configuration.nix;
+          extraModules = [
+            inputs.microvm.nixosModules.host
+          ];
+        };
         t800 = mkMachine { machineModule = system/t800/configuration.nix; };
         t70 = mkMachine { machineModule = system/t70/configuration.nix; };
       };
