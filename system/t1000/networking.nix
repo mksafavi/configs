@@ -15,6 +15,7 @@
     ];
   };
 
+  services.zerotierone.enable = true;
   networking.interfaces.enp14s0.wakeOnLan.enable = true;
 
   systemd.network.enable = true;
@@ -28,7 +29,10 @@
 
   networking.networkmanager.unmanaged = [ "br-microvm" ];
 
-  networking.firewall.trustedInterfaces = [ "br-microvm" ];
+  networking.firewall.trustedInterfaces = [
+    "br-microvm"
+    "zt+"
+  ];
 
   systemd.network.netdevs."br-microvm" = {
     netdevConfig = {
