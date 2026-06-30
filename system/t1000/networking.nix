@@ -16,6 +16,12 @@
   };
 
   services.zerotierone.enable = true;
+
+  services.tailscale = {
+    enable = true;
+    openFirewall = true;
+  };
+
   networking.interfaces.enp14s0.wakeOnLan.enable = true;
 
   systemd.network.enable = true;
@@ -32,6 +38,7 @@
   networking.firewall.trustedInterfaces = [
     "br-microvm"
     "zt+"
+    "tailscale0"
   ];
 
   systemd.network.netdevs."br-microvm" = {
