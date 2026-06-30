@@ -28,6 +28,8 @@
 
   networking.networkmanager.unmanaged = [ "br-microvm" ];
 
+  networking.firewall.trustedInterfaces = [ "br-microvm" ];
+
   systemd.network.netdevs."br-microvm" = {
     netdevConfig = {
       Name = "br-microvm";
